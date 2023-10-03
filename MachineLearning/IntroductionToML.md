@@ -42,7 +42,7 @@ It is neither based on supervised learning nor unsupervised learning. Moreover, 
 
 For a learning agent, there is always a start state and an end state. However, to reach the end state, there might be a different path. In Reinforcement Learning Problem an agent tries to manipulate the environment. The agent travels from one state to another. The agent gets the reward(appreciation) on success but will not receive any reward or appreciation on failure. In this way, the agent learns from the environment.
 
-![Types of Models](image.png)
+![Types of Models](img/image.png)
 
 |               |**Supervised**                 |**Unsupervised ML**                           	   |**Reinforcement ML**
 |---            |---                            |---                                               |---
