@@ -1,6 +1,4 @@
-# Machine Learning Models
-
-## Introduction To Learning
+# Introduction To Learning
 Term coined in 1959 by Arthur Samuel en the context of solving the checkers game through a Machine.
 
 The **program** or the machine **can deduce information on its own and appy it in another time**. A program can learn to produce a behaviour for which it wasn't programmed and from which the programer can't be concious.
