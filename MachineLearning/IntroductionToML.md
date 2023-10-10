@@ -5,6 +5,8 @@ The **program** or the machine **can deduce information on its own and appy it i
 
 **Machine Learning** is a subtask of the Artificial Intelligence which is responsible of the induction of a model through a learning process.
 
+The **Inductive Learning** is an area of Automated Learning, which consists of techniques that **induce these models using a set of previously known instances, called training instances**; once induced, they can be applied to data unknown to the model.
+
 Supervised Learning (Predictive) |Unsupervised Learning (Descriptive)|Reinforcement Learning
 ---                              |---                                |---
 Regression                       |Association                        |Model Free
@@ -12,17 +14,17 @@ Classification                   |Clustering                         |Model Base
 
 
 ## Supervised Learning 
-Supervised Learning input is provided as a labelled dataset, a model can learn from it to provide the result of the problem easily.
+Supervised Learning input is **provided as a labelled dataset**, a model can learn from it to provide the result of the problem easily.
 
 ### Classification problems
-This algorithm helps to predict a discrete value. It can be thought, the input data as a member of a particular class or group. For instance, taking up the photos of the fruit dataset, each photo has been labelled as a mango, an apple, etc. Here, the algorithm has to classify the new images into any of these categories.
+This algorithm **helps to predict a discrete value.** It can be thought, the input data as a member of a particular class or group. For instance, taking up the photos of the fruit dataset, each photo has been labelled as a mango, an apple, etc. Here, the algorithm has to classify the new images into any of these categories.
 
 - **Naive Bayes Classifier**
 - **Support Vector Machines**
 - **Logistic Regression**
 
 ### Regression problems
-These problems are used for continuous data. For example, predicting the price of a piece of land in a city, given the area, location, number of rooms, etc. And then the input is sent to the machine for calculating the price of the land according to previous examples. Examples-
+These problems are used for **continuous data.** For example, predicting the price of a piece of land in a city, given the area, location, number of rooms, etc. And then the input is sent to the machine for calculating the price of the land according to previous examples. Examples-
 
 - **Linear Regression**
 - **Nonlinear Regression**
@@ -30,7 +32,7 @@ These problems are used for continuous data. For example, predicting the price o
 
 ## Unsupervised Learning
 
-This learning algorithm is completely opposite to Supervised Learning. In short, there is no complete and clean labelled dataset in unsupervised learning. Unsupervised learning is self-organized learning. Its main aim is to explore the underlying patterns and predicts the output.  Here we basically provide the machine with data and ask to look for hidden features and cluster the data in a way that makes sense.
+This learning algorithm is **completely opposite to Supervised Learning. In short, there is no complete and clean labelled dataset** in unsupervised learning. Unsupervised learning is self-organized learning. Its main aim is to explore the underlying patterns and predicts the output.  Here we basically provide the machine with data and **ask to look for hidden features and cluster the data in a way that makes sense.**
 
 - **K – Means clustering**
 - **Neural Networks**
@@ -38,9 +40,9 @@ This learning algorithm is completely opposite to Supervised Learning. In short,
 
 ## Reinforcement Learning
 
-It is neither based on supervised learning nor unsupervised learning. Moreover, here the algorithms learn to react to an environment on their own. It is rapidly growing and moreover producing a variety of learning algorithms. These algorithms are useful in the field of Robotics, Gaming etc.
+It is neither based on supervised learning nor unsupervised learning. Moreover, here **the algorithms learn to react to an environment on their own.** It is rapidly growing and moreover producing a variety of learning algorithms. These algorithms are useful in the field of Robotics, Gaming etc.
 
-For a learning agent, there is always a start state and an end state. However, to reach the end state, there might be a different path. In Reinforcement Learning Problem an agent tries to manipulate the environment. The agent travels from one state to another. The agent gets the reward(appreciation) on success but will not receive any reward or appreciation on failure. In this way, the agent learns from the environment.
+For a learning agent, **there is always a start state and an end state.** However, to reach the end state, there might be a different path. In Reinforcement Learning Problem **an agent tries to manipulate the environment.** The agent travels from one state to another. The agent gets the reward(appreciation) on success but will not receive any reward or appreciation on failure. In this way, the agent learns from the environment.
 
 ![Types of Models](img/image.png)
 
