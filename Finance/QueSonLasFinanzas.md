@@ -18,9 +18,9 @@ Objetivos más comúnes :
 
 - **Libertad financiera:** un plan de finanzas personales bien administradas, que incluya hacer inversiones en diferentes instrumentos, te llevará al punto de la independencia financiera.
 
-**Jubilación:** si manejas tu dinero con inteligencia, contarás con un ingreso extra a la hora de retirarte del campo laboral y podrás mantener tu estilo de vida.
+- **Jubilación:** si manejas tu dinero con inteligencia, contarás con un ingreso extra a la hora de retirarte del campo laboral y podrás mantener tu estilo de vida.
 
-**Inversión:** a través de las inversiones logras que tu dinero genere rendimientos y de esa forma evitas que la inflación se coma tus ahorros.
+- **Inversión:** a través de las inversiones logras que tu dinero genere rendimientos y de esa forma evitas que la inflación se coma tus ahorros.
 
 ## Finanzas Públicas
 
