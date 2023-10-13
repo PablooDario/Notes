@@ -28,7 +28,7 @@ $$\Huge\varepsilon=\sum_{i=1}^{n}|y_i-\hat{y_i}|$$
 ![EstimatedError](img/image4.png)
 
 ## Loss Function
-Sum of squares of the error with respect to the estimated regression line.
+Sum of squares of the error with respect to the estimated regression line.</br>
 SCE = Square Coefficient Error
 
 $$\Huge SCE(b_0, b_1)=\sum_{i=1}^{n}e_i^{2}=\sum_{i=1}^{n}(y_i-\hat{y_i})^{2}$$
@@ -49,9 +49,9 @@ The ordinary least squares method consists of finding the $b_0$ and $b_1$ values
 
 Solving the partial drivatives of the optimization problem we can find the  $b_0$ and $b_1$ values that minimize the sum. So by solving them we obtain:
 
-$\Huge b_0=\frac{\sum y_i - \sum b_1x_i}{n}=\={y}-b_1\={x}$
+$\Huge b_0=\frac{\sum y_i - \sum b_1x_i}{n}=\bar{y}-b_1\bar{x}$
 
-$\Huge b_0=\frac{n\sum x_iy_i - \sum x_i \sum y_i}{n\sum x_i^{2}-(\sum x_i)^{2}}$
+$\Huge b_1=\frac{n\sum x_iy_i - \sum x_i \sum y_i}{n\sum x_i^{2}-(\sum x_i)^{2}}$
 
 ### Disadvantages from OLS
 - With this method there is no learning, no learning from mistakes.
