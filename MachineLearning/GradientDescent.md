@@ -52,10 +52,13 @@ Gradient descent algorithm does not work for all functions. There are two specif
 - Convex
 
 First, what does it mean it has to be differentiable? If a function is differentiable it has a derivative for each point in its domain; not all functions meet these criteria. Examples of non differentiable functions:
+
 ![NonDiffFunctions](img/image10.png)
 
 Second, we have to check if the function is convex. For a univariate function, this means that the line segment connecting two function’s points lays on or above its curve (it does not cross it). If it does it means that it has a local minimum which is not a global one.
+
 ![Convex](img/image11.png)
+
 Another way to check mathematically if a univariate function is convex is to calculate the second derivative and check if its value is always bigger than 0.
 
 $\Huge\frac{d^{2}f(x)}{dx^{2}}>0$
@@ -63,6 +66,7 @@ $\Huge\frac{d^{2}f(x)}{dx^{2}}>0$
 It is also possible to use quasi-convex functions with a gradient descent algorithm. However, often they have so-called saddle points (called also minimax points) where the algorithm can get stuck. For multivariate functions the most appropriate check if a point is a saddle point is to calculate a Hessian matrix.
 
 ![SaddlePoint](img/image12.png)
+
 ![LocalMaxMin](img/image5.png)
 
 ## Gradient Descent Algorithm 
