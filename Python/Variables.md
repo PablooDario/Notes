@@ -85,7 +85,7 @@ y=None
 
 ![None](img/image6.png)
 
-## Pass by Value and Reference to Fucntions 
+## Pass by Value and Reference to Functions 
 
 Remember everything is an object in Python, even functions. Function is an object of the function class and the function object is created at some memory adress.
 
