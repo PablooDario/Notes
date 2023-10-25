@@ -6,7 +6,7 @@ In [Gradient Descent](GradientDescent.md) we saw what it is, how it works, requi
 
 This type uses the **entire dataset** to compute the gradient of the loss function. It's straightforward but **can be slow for large datasets**. It's suitable for well-behaved, convex optimization problems.
 
-$$\Huge w' = w - \alpha \sum_{i=1}^{n}\nabla f_i (w)$$
+$$\Huge w' = w - \alpha \nabla f(w)$$
 
 ### Pros:
 
@@ -33,7 +33,7 @@ There are two main rules in terms of selecting a sample:
 - **Randomised rule:** randomly chosen sample (repetitions possible)
 - **Cyclic rule:** each sample once or minimised number of repetitions.
 
-$$\Huge w' = w - \alpha \nabla f_i (w)$$
+$$\Huge w' = w - \alpha \nabla f(w, x_i, y_i)$$
 
 ### Pros:
 
@@ -55,7 +55,8 @@ $$\Huge w' = w - \alpha \nabla f_i (w)$$
 
 This is a combination of BGD and SGD, offering a good **balance between precision and speed**. The idea is to use a subset of observations to update the gradient. It **uses a batch of data** (usually between 10 and 1,000) to compute the gradient. It's faster than BGD and less erratic than SGD. Mini-batch GD is a good compromise when you have a moderately sized dataset
 
-$$\Huge w' = w - \alpha \sum_{i=1}^{s}\nabla f_i (w)$$
+$$\Huge w' = w - \alpha \nabla f(w, x_{i:i+n}, y_{i:i+n})$$
+
 
 ![mBGD](img/image9.png)
 
