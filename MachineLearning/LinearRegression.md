@@ -139,12 +139,13 @@ By using **partial derivatives, a direction, and a learning rate**, gradient des
 
 Applying the formula of Batch Descent and assuming that we are performing a simple linear resgression with the SSE loss function, we would obtain:     
 
-$$\Huge w_0' = w_0 - 2 \alpha \sum_{i=1}^{m}(\hat{y_i}-y_i) =w_0 - 2 \alpha \sum_{i=1}^{m} w_0+w_1X_i-Y_i\\  
-w_1' =  w_1 - 2 \alpha \sum_{i=1}^{m}(\hat{y_i}-y_i)X_i = w_1 - 2\alpha \sum_{i=1}^{m} (w_0+w_1X_i-Y_i)X_i$$
+$\Huge w_0' = w_0 - 2 \alpha \sum_{i=1}^{m}(\hat{y_i}-y_i) = w_0 - 2 \alpha \sum_{i=1}^{m} w_0+w_1X_i-Y_i$
+
+$w_1' =  w_1 - 2 \alpha \sum_{i=1}^{m}(\hat{y_i}-y_i)X_i = w_1 - 2\alpha \sum_{i=1}^{m} (w_0+w_1X_i-Y_i)X_i$
 
 As we can see, this is an **numerical method**, which means we have to **do iterations, until the conditions met**. As the process for $w_0$ and $w_1$ are very similar we can generalize it for n independent variables and make advantje of the matrix operation.
 
-$$\Huge w_{j}' =  w_{j} - 2 \alpha \sum_{i=1}^{m}(\hat{y_i}-y_i)X_{j,i} = w_{j} - 2\alpha \sum_{i=1}^{m}(w_0X_{0i}+w_1X_{1i}+...+w_nX_{ni}-Y_i)X_{j,i}$$
+$\Huge w_{j}' =  w_{j} - 2 \alpha \sum_{i=1}^{m}(\hat{y_i}-y_i)X_{j,i} = w_{j} - 2\alpha \sum_{i=1}^{m}(w_0X_{0i}+w_1X_{1i}+...+w_nX_{ni}-Y_i)X_{j,i}$
 
 Where: 
 
@@ -165,10 +166,10 @@ Where:
 
 We have $n=2$ for $w_0$ and $w_1$, we have $m=3$ for the instances in $x$ and $y$. But as we can see, we are missing a row for $x_0$ since for every $w$ we need a $x$ to multiply; if see the formula $\hat{y}=w_0 + w_1x_1$, the $w_0$ doesnt multiply with an $x$ related, so for this we have to **add a row full of ones** at the beginning of the $x$ matrix, so when we multiply $w_0$ by 1, we would get the same result; this ones are called "dummy" values. Resulting in:
 
-$w=[0.1,0.2]$
-$x=[[1,1,1],[1,2,3]]$
-$y=[3,6,9]$
-$\alpha=0.01$
+- $w=[0.1,0.2]$
+- $x=[[1,1,1],[1,2,3]]$
+- $y=[3,6,9]$
+- $\alpha=0.01$
 
 ### Stochastic Gradient Descent
 
@@ -180,12 +181,13 @@ The idea of Stochastic Gradient Descent is **not to use the entire dataset** to 
 4. Update weights using the update rule.
 5. Repeat steps(2–4) for all training samples(from x(i) to x(n)) until convergence.
 
-$$\Huge w_0' = w_0 - {2 \alpha}(\hat{y_i}-y_i) =w_0 -{2 \alpha} (w_0X_{0,i}+w_1X_{1,i}-Y_i) \\  
-w_1' =  w_1 -{2 \alpha}(\hat{y_i}-y_i)X_{1,i} = w_1 -{2 \alpha}(w_0X{0,i}+w_1X_{1,i}-Y_i)X_{1,i}$$
+$\Huge w_0' = w_0 - {2 \alpha}(\hat{y_i}-y_i) =w_0 -{2 \alpha} (w_0X_{0,i}+w_1X_{1,i}-Y_i)$
+
+$w_1' =  w_1 -{2 \alpha}(\hat{y_i}-y_i)X_{1,i} = w_1 -{2 \alpha}(w_0X{0,i}+w_1X_{1,i}-Y_i)X_{1,i}$
 
 Generalizing for multiple linear regression:
 
-$$\Huge w_{j} =  w_{j} - 2 \alpha (\hat{y_i}-y_i)X_{j,i} = w_{j} - {2 \alpha}(w_0X_{0i}+w_1X_{1,i}+...+w_nX_{n,i}-Y_i)X_{j,i}$$
+$\Huge w_{j} =  w_{j} - 2 \alpha (\hat{y_i}-y_i)X_{j,i} = w_{j} - {2 \alpha}(w_0X_{0i}+w_1X_{1,i}+...+w_nX_{n,i}-Y_i)X_{j,i}$
 
 Where: 
 
