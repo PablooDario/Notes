@@ -31,7 +31,7 @@ By looking at these values we conclude that the slope is twice steeper along the
 
 # Gradient Descent 
 
-Gradient descent (GD) is an iterative first-order optimisation algorithm, used to find a local minimum/maximum of a given function. This method is commonly used in machine learning (ML) and deep learning (DL) to minimise a cost/loss function. Gradient descent can be applied to almost any cost function.
+Gradient descent (GD) is an iterative first-order optimisation algorithm, used to find a local minimum/maximum of a given function. This method is commonly used in machine learning (ML) and deep learning (DL) to minimise a cost/loss function. Gradient descent can be applied to almost any cost function. When we say that we are training the model, it’s gradient descent behind the scenes who trains it.
 
 The idea behind gradient descent is that the derivative of each weight will reveal its direction and influence on the cost function. In the image below, the cost function is f(w) = w², which is a parabola. The minimum is at (0,0), and the current weight is -5.6. The current loss is 31.36, and the line in orange represents the derivative, or current rate of change for the weight, which is -11.2. This indicates the weight needs to move “downhill” — or become more positive — to reach a loss of 0. This is where gradient descent comes in.
 
