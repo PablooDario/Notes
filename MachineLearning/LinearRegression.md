@@ -1,4 +1,4 @@
-# Regression
+# Linear Regression
 
 In practice we often need to solve problems involving **correlation between variables**; so in supervised learning we have a dataset *X* and from them we try to predict the values for the *Y* data set. The goal is to **create a model** that learn from the X data and** relate them** with the Y data.
 
@@ -139,13 +139,20 @@ By using **partial derivatives, a direction, and a learning rate**, gradient des
 
 Applying the formula of Batch Descent and assuming that we are performing a simple linear resgression with the SSE loss function, we would obtain:     
 
-$\Huge w_0' = w_0 - 2 \alpha \sum_{i=1}^{m}(\hat{y_i}-y_i) = w_0 - 2 \alpha \sum_{i=1}^{m} w_0+w_1X_i-Y_i$
+$\Huge w_0' = w_0 - 2 \alpha \sum(\hat{y_i}-y_i) = w_0 - 2 \alpha \sum w_0+w_1X_i-Y_i$
 
-$w_1' =  w_1 - 2 \alpha \sum_{i=1}^{m}(\hat{y_i}-y_i)X_i = w_1 - 2\alpha \sum_{i=1}^{m} (w_0+w_1X_i-Y_i)X_i$
+$\Huge w_1' =  w_1 - 2 \alpha \sum(\hat{y_i}-y_i)X_i = w_1 - 2\alpha \sum (w_0+w_1X_i-Y_i)X_i$
 
 As we can see, this is an **numerical method**, which means we have to **do iterations, until the conditions met**. As the process for $w_0$ and $w_1$ are very similar we can generalize it for n independent variables and make advantje of the matrix operation.
 
-$\Huge w_{j}' =  w_{j} - 2 \alpha \sum_{i=1}^{m}(\hat{y_i}-y_i)X_{j,i} = w_{j} - 2\alpha \sum_{i=1}^{m}(w_0X_{0i}+w_1X_{1i}+...+w_nX_{ni}-Y_i)X_{j,i}$
+**SSE**
+
+$\Huge w_{j}' =  w_{j} - 2 \alpha \sum(\hat{y_i}-y_i)X_{j,i} = w_{j} - 2\alpha \sum (w_0X_{0i}+w_1X_{1i}+...+w_nX_{ni}-Y_i)X_{j,i}$
+
+**MSE**
+
+$\Huge w_{j}' =  w_{j} - \frac {2 \alpha}{m} \sum(\hat{y_i}-y_i)X_{j,i} = w_{j} - \frac{2\alpha}{m} \sum (w_0X_{0i}+w_1X_{1i}+...+w_nX_{ni}-Y_i)X_{j,i}$
+
 
 Where: 
 
@@ -183,7 +190,7 @@ The idea of Stochastic Gradient Descent is **not to use the entire dataset** to 
 
 $\Huge w_0' = w_0 - {2 \alpha}(\hat{y_i}-y_i) =w_0 -{2 \alpha} (w_0X_{0,i}+w_1X_{1,i}-Y_i)$
 
-$w_1' =  w_1 -{2 \alpha}(\hat{y_i}-y_i)X_{1,i} = w_1 -{2 \alpha}(w_0X{0,i}+w_1X_{1,i}-Y_i)X_{1,i}$
+$\Huge w_1' =  w_1 -{2 \alpha}(\hat{y_i}-y_i)X_{1,i} = w_1 -{2 \alpha}(w_0X{0,i}+w_1X_{1,i}-Y_i)X_{1,i}$
 
 Generalizing for multiple linear regression:
 
@@ -195,7 +202,6 @@ Where:
 - $j\leadsto$ number of $w$ in which we are
 - $\alpha\leadsto$ learning rate
 - $i\leadsto$ random instance of $X$ 
-- $m\leadsto$ number instances
 - $y\leadsto$ vector with the values of the real $y's$
 - $x\leadsto$ matrix with the values of $j-1$ independent variables 
 
