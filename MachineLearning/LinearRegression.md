@@ -1,6 +1,6 @@
 # Linear Regression
 
-In practice we often need to solve problems involving **correlation between variables**; so in supervised learning we have a dataset *X* and from them we try to predict the values for the *Y* data set. The goal is to **create a model** that learn from the X data and** relate them** with the Y data.
+In practice we often need to solve problems involving **correlation between variables**; so in supervised learning we have a dataset *X* and from them we try to predict the values for the *Y* data set. The goal is to **create a model** that learn from the X data and **relate them** with the Y data.
 
 The relationship between the *X* data and the *Y* values can be **determined by means of a function** $h(x)$ were the values to be predicted can be discrete or continous. 
 
