@@ -57,6 +57,11 @@ If we are workin with 3 variables, we are looking a point that lies in the plane
 
 ![Planes](img/image2.png)
 
+In other dimensions we also have the same cases, there is no solution, there is one or infinite. In a third dimension the cases would look like this: 
+
+
+![Planes](img/image4.png)
+
 ## Matrix Notation
 
 The essential information of a linear system can be recorded compactly in a rectangular array called a matrix.
@@ -107,15 +112,11 @@ $$\begin{equation}
 
 Keep $x_1$ in the first equation and eliminate it from de other equations.
 
-
 **[new equation 3] = -5 · [equation 1] + [equation 3]**
-
 
 Now in order to obtain 1 as the coefficient for $x_2$, multiply equation 2 by 1/2.
 
-
 **[new equation 2] = 1/2 · [equation 2]**
-
 
 With the 2 previous operations we obtain:
 
@@ -188,3 +189,26 @@ It is important to note that row **operations are reversible**.
 Any solution of the original system remains a solution of the new system. Conversely, since the original system can be produced via row operations on the new system, each solution of the new system is also a solution of the original system.
 
 ## Existence and Uniqueness
+
+**Is the system consistent; that is, does at least one solution exist?**
+**If a solution exists, is it the only one; that is, is the solution unique?**
+
+Example : Determine if the following matrix is consistent: 
+
+$\begin{matrix}
+x_2 - 4x_3 = 8\\
+2x_1 - 3x_2 + 2x_3 = 1\\
+4x_1 - 8x_1 + 12x_3 = 1
+\end{matrix}$
+
+Converting the augmented matrix into the triangular form we obtain:
+
+$\begin{matrix}
+2x_1 - 3x_2 - 2x_3 = 1\\
+x_2 - 4x_3 = 8\\
+0 = 15
+\end{matrix}$
+
+The equation 3 is a short form of $0x_1 + 0x_2 + 0x_3 = 15$. This system has a built-in contradiction. There are no values of $x_1$, $x_2$, $x_3$ that satify because the equation $0=15$ is never true. Therefore the system is *inconsistent* (i.e. has no solution).
+
+![Inconsistent](img/image3.png)
