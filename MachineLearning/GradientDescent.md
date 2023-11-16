@@ -23,14 +23,15 @@ $$\huge\nabla f(x,y) = \begin{bmatrix}
 \end{bmatrix}$$
 
 $$\huge\nabla f(10,10) = \begin{bmatrix}
-10 \\ 20
+10 \\ 
+20
 \end{bmatrix}$$
 
 By looking at these values we conclude that the slope is twice steeper along the y axis.
 
 # Gradient Descent 
 
-Gradient descent (GD) is an iterative first-order optimisation algorithm, used to find a local minimum/maximum of a given function. This method is commonly used in machine learning (ML) and deep learning (DL) to minimise a cost/loss function. Gradient descent can be applied to almost any cost function.
+Gradient descent (GD) is an iterative first-order optimisation algorithm, used to find a local minimum/maximum of a given function. This method is commonly used in machine learning (ML) and deep learning (DL) to minimise a cost/loss function. Gradient descent can be applied to almost any cost function. When we say that we are training the model, it’s gradient descent behind the scenes who trains it.
 
 The idea behind gradient descent is that the derivative of each weight will reveal its direction and influence on the cost function. In the image below, the cost function is f(w) = w², which is a parabola. The minimum is at (0,0), and the current weight is -5.6. The current loss is 31.36, and the line in orange represents the derivative, or current rate of change for the weight, which is -11.2. This indicates the weight needs to move “downhill” — or become more positive — to reach a loss of 0. This is where gradient descent comes in.
 
@@ -114,3 +115,13 @@ $\Huge f(x)=x^4-2x^3+2$
 ![Example2](img/image14.png)
 
 An existence of a saddle point imposes a real challenge for the first-order gradient descent algorithms like GD, and obtaining a global minimum is not guaranteed. Second-order algorithms deal with these situations better (e.g. Newton-Raphson method).
+
+## Challenges of Gradient Descent
+
+- **Choosing the Right Learning Rate:** Picking an appropriate learning rate (α) is crucial. Too small, and the algorithm will converge very slowly. Too large, and it might overshoot the optimal point or even diverge.
+
+- **Convergence to Local Minima:** Gradient descent can get stuck in local minima, especially in complex, non-convex loss landscapes. It might miss the global minimum and settle for a suboptimal solution.
+
+- **Sensitivity to Initial Parameters:** The starting values of m and b can influence convergence. Starting far from the optimal values might lead to slow convergence or convergence to a suboptimal solution.
+
+- **Overfitting or Underfitting Data:** Gradient descent might lead to overfitting if the model becomes too complex or underfitting if it's too simple, impacting the predictive power of the model.
