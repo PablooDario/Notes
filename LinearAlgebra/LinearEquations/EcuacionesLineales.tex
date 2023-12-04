@@ -1,0 +1,716 @@
+\documentclass{article}
+\usepackage[top=1cm, left=1.5cm, right=1.5cm, bottom=1.5cm]{geometry}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\graphicspath{{./img/}}
+\usepackage{amsmath}
+\usepackage{tcolorbox}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1em} 
+
+\title{Ecuaciones Lineales}
+\date{28/11/2023}
+\author{Pablo DS} 
+
+\begin{document}
+\maketitle
+\section{Sistemas Lineales}
+
+En matemáticas la palabra “lineal” tiene un significado muy amplio. Una gran parte de la teoría de álgebra lineal elemental es, de hecho, una generalización de las propiedades de la línea recta.
+
+\begin{tcolorbox}[colback=green!20!white,colframe=green!80!black,title=Propiedades de la Recta]
+    \begin{itemize}
+        \item[-] La \textbf{pendiente} $m$ de una recta que pasa por los puntos $(x_1, y_1)$ y $(x_2, y_2)$ está dada por $$m=\frac{y_2-y_1}{x_2-x_1} = \frac{\Delta y}{\Delta x} \quad si \quad x_1 \neq x_2$$
+        \item[-] Si $x_2 - x_1 = 0$ y $y2 \neq y1$, entonces la recta es vertical y se dice que la pendiente es indefinida.
+        \item[-] Cualquier recta (a excepción de aquella que tiene una pendiente indefinida) se puede describir con su ecuación en la forma pendiente-ordenada al origen $\mathbf{y= mx + b}$, donde $m$ es la pendiente de la recta y $b$ es la ordenada al origen
+        \item[-] Dos rectas distintas son paralelas si y sólo si tienen la misma pendiente. 
+        \item[-] Las rectas paralelas al eje $x$ tienen pendiente cero
+        \item[-] Las rectas paralelas al eje y tienen pendiente indefinida.
+    \end{itemize}
+
+\end{tcolorbox}
+
+Una ecuación lineal en las variables $ x_1,x_2,\dots, x_n $ es una ecuación que puede escribirse de la forma $ a_1x_1,a_2x_2,\dots, a_nx_n=b$ donde $b$ y los coeficientes $a_1,a_2,\dots, a_n$ son números reales o complejos, el subíndice n puede ser cualquier número entero positivo. En los problemas de la vida real, $n$ puede ser 50 o 5000, o incluso mayor. Aquí se utiliza la palabra lineal porque la gráfica de la ecuación es una linea recta.
+
+En muchas apliciones se nos da $b$ y a las constantes $ a_1,a_2,\dots, a_n $ donde debemos determinar los números $ x_1,x_2,\dots, x_n $ denominados \textbf{incógnitas}, que satisfacen la ecuación.
+
+Una \textbf{solución} de una ecuación lineal es una sucesión $ n $ de números $ s_1,s_2,\dots, s_n $ que tienen la propiedad de satisfacer a la ecuación, cuando los valores $(s_1, s_2, \dots, s_n)$ se sustituyen por $(x_1, x_2, \dots, x_n)$ en la ecuación.
+
+Un \textbf{sistema de $m$ ecuaciones lineales con $n$ incógnitas $ x_1,x_2,\dots, x_n $}, (al que podemos llamar sistema lineal) es un conjunto de $m$ ecuaciones lineales, cada una con $ n $ incógnitas; el cual se puede denotar como:
+
+\begin{equation}
+    \begin{matrix}
+        \begin{aligned}
+            a_{11}x_1 + a_{12}x_2 + \dots + a_{1n}x_n = b_1\\
+            a_{21}x_1 + a_{22}x_2 + \dots + a_{2n}x_n = b_2\\
+            \vdots \phantom{aaaaaaaa} \vdots \phantom{aaaaaaaaaa} \vdots \phantom{aaaaaa} \vdots\\
+            a_{m1}x_1 + a_{m2}x_2 + \dots + a_{mn}x_n = b_m\\
+        \end{aligned}
+    \end{matrix}
+\end{equation}
+
+\pagebreak
+
+Una solución del sistema es una lista $s_1, s_2, \dots, s_n$ de números que hace que cada ecuación sea una afirmación verdadera cuando los valores $(s_1, s_2, \dots, s_n)$ se sustituyen por $(x_1, x_2, \dots, x_n)$, respectivamente. El conjunto de todas las soluciones posibles se denomina conjunto de soluciones del sistema lineal. Dos sistemas lineales se denominan equivalentes si tienen el mismo conjunto de soluciones. Las preguntas que surgen son: ¿tiene este sistema varias soluciones y, de ser así, cuántas? 
+
+Encontrar el conjunto solución de un sistema de dos ecuaciones lineales en dos variables es fácil porque cada ecuación corresponde a una línea recta, por lo cual la solución equivale a encontrar la intersección de dos rectas. Dos rectas no tienen por qué intersecarse en un único punto; si no son paralelas, entonces se intersectan en un punto, por el contrario, si son paralelas entonces o no se intersectan o son la misma recta y se intersectan en infinitos puntos.
+
+La gráfica de cada ecuacion de un sistema de $2 \times 2$ es una línea recta, que denotamos mediante $l_1$ y $l_2$, respectivamente. Si $x = s1$, $y = s2$ es una solución del sistema lineal, entonces el punto (s1, s2) pertenece a ambas rectas, $l_1$ y $l_2$. De manera recíproca, si el punto (s1, s2) está en ambas rectas, $l_1$ y $l_2$, entonces $x = s1$, $y = s2$ es una solución para el sistema lineal.
+
+\begin{tcolorbox}[colback=blue!10!white,colframe=blue!60!black,title=Posibles casos]
+    \begin{itemize}
+        \item[1.] El sistema tiene una solución única; esto es, las rectas $l_1$ y $l_2$ se intersecan exactamente en un punto.
+        \item[2.] El sistema no tiene solución; es decir, las rectas $l_1$ y $l_2$ no se intersecan.
+        \item[3.] El sistema tiene un número infinito de soluciones; en otras palabras, las rectas $l_1$ y $l_2$ coinciden.
+    \end{itemize}
+\end{tcolorbox}
+
+Se dice que un sistema es inconsistente si no tiene solución y que un sistema es consistente si tiene 1 solución o infinitas soluciones.
+
+\begin{figure}[ht]
+  \centerline{\includegraphics[width=0.7\textwidth]{image5.png}}
+  \caption{Ilustración de casos con 2 incógnitas}
+  \label{}
+\end{figure}
+
+Ahora, consideremos un sistema lineal de tres ecuaciones con tres incógnitas, $x, y$ y $z$:
+
+$$\begin{matrix}
+    a_1x + b_1y + c_1z =d_1\\ 
+    a_2x + b_2y + c_2z =d_2\\ 
+    a_3x + b_3y + c_3z =d_3
+\end{matrix}$$
+
+La gráfica de cada una de estas ecuaciones es un plano, y se denota con $P_1, P_2$ y $P_3$ respectivamente. Como en el caso de un sistema lineal de dos ecuaciones con dos incógnitas, el sistema lineal puede tener una solución única, no tener solución o tener una infinidad de soluciones. Estos 3 casos se extrapolan a sistemas de ecuaciones de $m \times n$.
+
+\begin{figure}[ht]
+  \centerline{\includegraphics[width=0.6\textwidth]{image4.png}}
+  \caption{Ilustración de casos con 3 incógnitas}
+  \label{}
+\end{figure}
+
+\subsection{Resolviendo Sistemas de Ecuaciones}
+
+Para resolver las siguientes ecuaciones lineales usaremos el método de elminación, el cuál consiste en eliminar variable(s) de alguna ecuación hasta aislar una sola para obtener su valor y después sustituir ese valor en las demás ecuaciones; para ello se hará uso de las operaciones elementales por filas, las cuales el efectuarlas no afecta el sistema de ecuaciones. 
+
+\begin{tcolorbox}[colback=blue!10!white,colframe=blue!60!black,title=Operaciones Elementales por filas]
+    \begin{itemize}
+        \item[1.] Intercambiar dos ecuaciones.
+        \item[2.] Multiplicar una ecuación por una constante diferente de cero.
+        \item[3.] Sumar un múltiplo de una ecuación a la otra.
+    \end{itemize}
+\end{tcolorbox}
+
+\begin{large}
+    Ejemplo 1
+\end{large}
+Considere el sistema lineal
+
+\begin{equation*}
+    \begin{aligned}
+            x &- 3y = -7\\
+            2x &-6y = \phantom{-} 7
+    \end{aligned}
+\end{equation*}
+
+Decidimos eliminar x. Para ello sumamos (-2) veces la primera ecuación a la segunda y obtenemos:
+
+\begin{equation*}
+    \begin{aligned}
+            x & - 3y = -7\\
+            0x & +0y = 21
+    \end{aligned}
+\end{equation*}
+
+Cuya segunda ecuación no tiene sentido. Esto significa que la solución del sistema lineal es el conjunto vacío o bien el sistema no tiene solución.
+
+\begin{large}
+    Ejemplo 2
+\end{large}
+Considere el sistema lineal
+
+\begin{equation*}
+    \begin{aligned}
+            x & +2y -3z = -4\\
+            2x & +\phantom{2}y -3z = \phantom{-} 4
+    \end{aligned}
+\end{equation*}
+
+Para eliminar $x$, sumamos (-2) veces la primera ecuación a la segunda y obtenemos
+
+\begin{equation*}
+    \begin{aligned}
+            x & +2y &-3z = -4\\
+            & -3y &+3z = 12
+    \end{aligned}
+\end{equation*}
+
+Despejamos $y$ en la segunda ecuación para obtener $$y=z-4$$ donde $z$ puede ser cualquier numero real. Entonces, con base en la primera ecuación obtenemos 
+
+\begin{equation*}
+    \begin{matrix}
+            x + 2y - 3z = -4\\
+            x = -4 -2y +3z\\
+            x= z + 4
+    \end{matrix}
+\end{equation*}
+
+Por lo tanto, una solución para el sistema lineal es: 
+
+\begin{equation*}
+    \begin{aligned}
+            x & = r + 4\\
+            y & = r - 4\\
+            z &= r
+    \end{aligned}
+\end{equation*}
+
+Donde $r$ es cualquier número real. Esto significa que el sistema linea tiene un número infinito de soluciones. Cada vez que asignamos un valor a $r$,obtenemos otra solución.
+
+\begin{large}
+    Ejemplo 3
+\end{large}
+Considere el sistema lineal
+
+\begin{equation*}
+    \begin{aligned}
+            x & +2y + 3z = 6\\
+            2x & -3y + 2z = 14\\
+            3x & +y - z = -2
+    \end{aligned}
+\end{equation*}
+
+Para eliminar $x$, sumamos (-2) veces la primera ecuación a la segunda y (-3) veces la primera ecuación a la tercera, lo que da por resultado
+
+\begin{equation*}
+    \begin{aligned}
+            x & +2y + 3z = 6\\
+            & -7y - 4z = 2\\
+            & -5y -10z = -20
+    \end{aligned}
+\end{equation*}
+
+Después eliminamos $y$, por lo que multiplicamos la tercera ecuación por $-\frac{1}{5}$ para obtener
+
+\begin{equation*}
+    \begin{aligned}
+            x & +2y & + 3z &= 6\\
+            & -7y & - 4z &= 2\\
+            &\phantom{-98} y & + 2z &= 4
+    \end{aligned}
+\end{equation*}
+
+Intercambiamos la segunda y tercer ecuación
+
+\begin{equation*}
+    \begin{aligned}
+            x & +2y & + 3z &= 6\\
+            &\phantom{-98} y & + 2z &= 4\\
+            & -7y & - 4z &= 2\\
+    \end{aligned}
+\end{equation*}
+
+Ahora sumamos 7 veces la segunda ecuación a la tercera, para obtener
+
+\begin{equation*}
+    \begin{aligned}
+            x & +2y & + 3z &= 6\\
+            &\phantom{-98} y & + 2z &= 4\\
+            & & 10z &= 30\\
+    \end{aligned}
+\end{equation*}
+
+Por lo que $z=3$ y sustituyendo este valor en la segunda ecuación encontramos que $y=-2$. Al sustituir estos valores en la primera ecuación, finalmente obtenemos $x=1$ 
+
+\subsection{Gauss-Jordan}
+
+Antes de resolver otros sistemas de ecuaciones es conveniente introducir una notación que simplifica la escritura de cada paso del procedimiento mediante el concepto de matriz.
+
+\begin{tcolorbox}[colback=blue!10!white,colframe=blue!60!black,title=Definición]
+    Una matriz A de $m \times n$ es un arreglo rectangular de $mn$ números reales (o complejos) ordenados en m filas horizontales y n columnas verticales
+\end{tcolorbox}
+
+\begin{large}
+    Matriz de Coeficientes
+\end{large}
+
+Es aquella matriz que únicamente contiene los coeficientes de las incógnitas.
+
+\begin{equation*}
+    \begin{matrix}
+        \begin{array}{rrrr}
+            2x_1 & 4x_2 & 6x_3 &=18\\
+            4x_1 & 5x_2 & 6x_3 &=24\\
+            3x_1 & x_2  & -2x_3 &=4            
+        \end{array}
+    \end{matrix}
+    \quad \quad A = \begin{bmatrix}
+        \begin{array}{rrr}
+            2 & 4 & 6 \\
+            4 & 5 & 6 \\
+            3 & 1 & -2         
+        \end{array}    
+    \end{bmatrix}
+\end{equation*}
+
+\begin{large}
+    Matriz Aumentada
+\end{large}
+
+Es aquella matriz que representa un sistema de ecuaciones lineales, donde la línea vertical separa la parte de los coeficientes (a la izquierda) de la parte de los términos independientes (a la derecha).
+
+\begin{equation*}
+    \begin{matrix}
+        \begin{array}{rrrr}
+            2x_1 & 4x_2 & 6x_3 &=18\\
+            4x_1 & 5x_2 & 6x_3 &=24\\
+            3x_1 & x_2  & -2x_3 &=4            
+        \end{array}
+    \end{matrix}
+    \quad \quad A = \left[\begin{array}{rrr|r}
+        2 & 4 & 6 & 18\\
+        4 & 5 & 6 & 24\\
+        3 & 1 & -2& 4
+    \end{array}\right]
+\end{equation*}
+
+Se ha visto que multiplicar una ecuación por un número diferente de cero da por resultado una nueva ecuación equivalente, si se suma un múltiplo de una ecuación a otra del sistema se obtiene otra ecuación equivalente y por último, si se intercambian dos ecuaciones en un sistema de ecuaciones se obtiene un sistema equivalente. Como se vió anteriormente estas son las operaciones elementales por filas. El proceso de aplicar las operaciones elementales por filas para simplificar una matriz aumentada se llama reducción por filas. 
+
+El primer número diferente de cero en una fila (si lo hay) se llama \textbf{entrada principal para esa fila}. 
+
+Una matriz se encuentra en forma escalonada si cumple con las siguientes propiedades:
+
+\begin{tcolorbox}[colback=blue!10!white,colframe=blue!60!black,title=Propiedades de la Forma Escalonada]
+    \begin{itemize}
+        \item[-] Todas las filas cuyos elementos son todos cero aparecen en la parte inferior de la matriz.
+        \item[-] La entrada principal en cualquier fila está a la derecha de la entrada principal de la fila anterior
+        \item[] Todas las entradas en una columna por debajo de un pivote son ceros.
+    \end{itemize}   
+    Una matriz se encuentra en la \textbf{forma escalonada reducida por filas} si se cumplen las siguientes condiciones:
+    \begin{itemize}
+        \item[-] La entrada principal en cualquier fila es 1.
+        \item[-] La entrada principal es el único elemento distinto de 0 en su columna.
+    \end{itemize}    
+\end{tcolorbox}
+
+\begin{large}
+    Ejemplo Forma Escalonada
+\end{large}
+
+Las entradas principales (.) pueden tener cualquier valor diferente de 0; las otras entradas (*) pueden tener cualquier valor (incluyendo cero).
+
+\begin{alignat*}{2}
+    \begin{bmatrix}
+        .&*&*&*\\
+        0&.&*&*\\
+        0&0&0&0\\
+        0&0&0&0
+    \end{bmatrix}
+    & \hspace{ 4em}%
+    \begin{bmatrix}
+        0&.&*&*&*&*&*&*&*&*\\
+        0&0&0&.&*&*&*&*&*&*\\
+        0&0&0&0&.&*&*&*&*&*\\
+        0&0&0&0&0&.&*&*&*&*\\
+        0&0&0&0&0&0&0&0&.&*
+    \end{bmatrix}
+\end{alignat*}
+
+\begin{tcolorbox}[colback=green!20!white,colframe=green!80!black,title=Pivote]
+    Un pivote en una matriz es aquel elemento que corresponde a una entrada principal en la forma escalonada reducida de dicha matriz.
+\end{tcolorbox}
+
+\begin{large}
+    Ejemplo Forma Escalonada Reducida
+\end{large}
+
+Los pivotes son 1 y los demás elementos en su columna son 0.
+
+\begin{alignat*}{2}
+    \begin{bmatrix}
+        1&0&*&*\\
+        0&1&*&*\\
+        0&0&0&0\\
+        0&0&0&0
+    \end{bmatrix}
+    & \hspace{ 4em}%
+    \begin{bmatrix}
+        0&1&*&0&0&0&*&*&0&*\\
+        0&0&0&1&0&0&*&*&0&*\\
+        0&0&0&0&1&0&*&*&0&*\\
+        0&0&0&0&0&1&*&*&0&*\\
+        0&0&0&0&0&0&0&0&1&*
+    \end{bmatrix}
+\end{alignat*}
+
+Cualquier matriz distinta de cero puede reducirse en más de una matriz en forma escalonada, utilizando diferentes secuencias de operaciones de fila. Sin embargo, la forma escalonada reducida que se obtiene de una matriz es única.
+
+\begin{tcolorbox}[colback=green!20!white,colframe=green!80!black,title=Unicidad de la Forma Escalonada Reducida]
+    Cada matriz es equivalente en fila a una y sólo una matriz escalonada reducida.
+\end{tcolorbox}
+
+\section{Matrices}
+
+Las matrices nos permiten escribir sistemas lineales de una manera compacta que facilite la automatización del método de eliminación en una computadora, dándonos un procedimiento rápido y eficaz para determinar las soluciones. Su uso, sin embargo, no nos proporciona solamente la oportunidad de contar con una notación conveniente, sino también de resolver sistemas de ecuaciones lineales y otros problemas computacionales de manera rápida y eficiente, desarrollando operaciones sobre las matrices y trabajando con ellas de acuerdo con las reglas que cumplen.
+
+\begin{tcolorbox}[colback=blue!10!white,colframe=blue!60!black,title=Definición]
+    Una matriz A de $m$ x $n$ es un arreglo rectangular de $mn$ números reales (o complejos) ordenados en m filas horizontales y n columnas verticales
+\end{tcolorbox}
+
+\begin{alignat*}{2}
+    \begin{split}
+        A = 
+    \end{split} 
+& \hspace{ 4em}% 
+    \begin{bmatrix}
+        a_{11} & a_{12} & \dotsb & \dotsb & a_{1j} & \dotsb & a_{1n}\\
+        a_{21} & a_{22} & \dotsb & \dotsb & a_{2j} & \dotsb & a_{2n}\\
+        \vdots & \vdots & \dotsb & \dotsb & \vdots & \dotsb & \vdots\\
+        a_{i1} & a_{i2} & \dotsb & \dotsb & a_{ij} & \dotsb & a_{in}\\
+        \vdots & \vdots &  &  & \vdots &  & \vdots\\
+        a_{m1} & a_{m2} & \dotsb & \dotsb & a_{mj} & \dotsb & a_{mn}
+    \end{bmatrix} 
+\end{alignat*}
+
+El primer subíndice, $i$, indica que estamos trabajando con la i-ésima ecuación, mientras que el segundo subíndice, $j$, está asociado con la j-ésima variable $x_j$.
+
+La \textbf{i-ésima fila} de A es 
+
+\begin{alignat*}{2}
+    \begin{bmatrix}
+        a_{i1} & a_{i2} & \dotsb & a_{in} 
+    \end{bmatrix} 
+& \hspace{ 4em}% 
+    \begin{split}
+        \text{(1 $\leq$ i $\leq$ m)}
+    \end{split} 
+\end{alignat*}
+
+La \textbf{j-ésima columna} de A es 
+
+\begin{alignat*}{2}
+    \begin{bmatrix}
+        a_{1j}\\
+        a_{2j}\\
+        \vdots\\ 
+        a_{mj} 
+    \end{bmatrix} 
+& \hspace{ 4em}% 
+    \begin{split}
+        \text{(1 $\leq$ j $\leq$ n)}
+    \end{split} 
+\end{alignat*}
+
+Diremos que A es $m$ por $n$ (que se escribe $m \times n$). Si $m = n$, decimos que A es una \textbf{matriz cuadrada} de orden $n$, y que los números $ a_{11}, a_{22},\dots, a_{mn} $ forman la \textbf{diagonal principal} de A. Nos referimos al número $a_{ij}$, que está en la i-ésima fila y la j-ésima columna de A, como el i, j-ésimo elemento de A, o la entrada (i, j) de A, y lo solemos escribir como $$A = [a_{ij}]$$
+
+Las matrices de 1 $\times n$ o $n \times$ 1 también se denominan como vectores, y lo denotaremos mediante letras minúsculas.
+
+\begin{equation*}
+    \mathbf{u}=\left[
+    \begin{array}{llll}
+        1 & 2 & -1 & 0
+        \end{array}\right] \quad \mathbf{v}=\left[\begin{array}{r}
+        1 \\
+        -1 \\
+        3
+    \end{array}\right]
+\end{equation*}
+
+Si todas las entradas de un vector son iguales a cero, se denota con 0. Además que si A es una matriz de $n \times n$, los filas de A son matrices de 1 $\times n$.
+
+\begin{large}
+    Ejemplo 1
+\end{large}
+
+La siguiente tabla se puede representar en forma de matriz, la cual proporciona las distancias entre las ciudades indicadas
+
+$$\begin{array}{|c|c|c|c|c|}
+    \hline & \text { Londres } & \text { Madrid } & \text { Nueva York } & \text { Tokio } \\
+    \hline \text { Londres } & 0 & 785 & 3,469 & 5,959 \\
+    \hline \text { Madrid } & 785 & 0 & 3,593 & 6,706 \\
+    \hline \text { Nueva York } & 3,469 & 3,593 & 0 & 6,757 \\
+    \hline \text { Tokio } & 5,959 & 6,706 & 6,757 & 0 \\
+    \hline
+\end{array}$$
+
+\begin{large}
+    Ejemplo 2
+\end{large}
+
+La tabla siguiente, en donde se lista el factor de congelación del viento, muestra cómo una combinación de la temperatura y la velocidad del viento hace que un cuerpo se sienta más frío que la temperatura real. Por ejemplo, cuando la temperatura es de 10 °F y el viento es de 15 millas por hora, el cuerpo pierde la misma cantidad de calor que la que perdería si la temperatura fuera de -18 °F sin viento
+
+$$\begin{tabular}{|r|rrrrrr|}
+    \hline & \multicolumn{6}{|c|}{${ }^{\circ} \mathrm{F}$} \\
+    $\mathrm{mph}$ & 15 & 10 & 5 & 0 & -5 & -10 \\
+    \hline \hline 5 & 12 & 7 & 0 & -5 & -10 & -15 \\
+    \hline 10 & -3 & -9 & -15 & -22 & -27 & -34 \\
+    \hline 15 & -11 & -18 & -25 & -31 & -38 & -45 \\
+    \hline 20 & -17 & -24 & -31 & -39 & -46 & -53 \\
+    \hline
+\end{tabular}$$
+
+Esta tabla puede representarse como la matriz
+
+$$A=\left[\begin{array}{rrrrrrr}
+5 & 12 & 7 & 0 & -5 & -10 & -15 \\
+10 & -3 & -9 & -15 & -22 & -27 & -34 \\
+15 & -11 & -18 & -25 & -31 & -38 & -45 \\
+20 & -17 & -24 & -31 & -39 & -46 & -53
+\end{array}\right]$$
+
+\begin{tcolorbox}[colback=blue!10!white,colframe=blue!60!black,title=Matriz Diagonal]
+    Es aquella matriz cuadrada A = [$a_{ij}$], en donde cada término fuera de la diagonal principal es igual a cero, es decir, $a_{ij}$ = 0 para $i \neq j$
+\end{tcolorbox}
+
+\begin{large}
+    Ejemplos
+\end{large}
+
+\begin{equation*}
+    G=\left[\begin{array}{rr}
+    4 & 0 \\
+    0 & -2
+    \end{array}\right] \quad \text { y } \quad H=\left[\begin{array}{rrr}
+    -3 & 0 & 0 \\
+    0 & -2 & 0 \\
+    0 & 0 & 4
+    \end{array}\right]
+\end{equation*}
+
+\begin{tcolorbox}[colback=blue!10!white,colframe=blue!60!black,title=Matriz Escalar]
+    Es aquella matriz \textbf{diagonal} A = $[a_{ij}]$, en donde todos los términos de la diagonal principal son iguales; es decir, $a_{ij} = c$ para $i = j$ y $a_{ij} = 0$ para $i \neq j$
+\end{tcolorbox}
+
+\begin{large}
+    Ejemplos
+\end{large}
+
+\begin{equation*}
+    I_3=\left[\begin{array}{lll}
+    1 & 0 & 0 \\
+    0 & 1 & 0 \\
+    0 & 0 & 1
+    \end{array}\right], \quad J=\left[\begin{array}{rr}
+    -2 & 0 \\
+    0 & -2
+    \end{array}\right]
+\end{equation*}
+
+\subsection{Operaciones Matriciales}
+
+\begin{tcolorbox}[colback=blue!10!white,colframe=blue!60!black,title=Suma de Matrices]
+    Si $A = [a_{ij}]$ y $B = [b_{ij}]$ son matrices de $m \times n$, la suma de A y B da por resultado la matriz $C = [c_{ij}]$ de $m \times n$, definida por $$c_{ij} = a_{ij} + b_{ij} \quad (i \leq i \leq m, 1 \leq j \ n)$$
+    Es decir, C se obtiene sumando los elementos correspondientes de A y B
+\end{tcolorbox}
+
+Sean
+$$A=\left[\begin{array}{lll}
+    1 & -2 & 4 \\
+    2 & -1 & 3
+    \end{array}\right] \quad \text { y } \quad B=\left[\begin{array}{lrr}
+    0 & 2 & -4 \\
+    1 & 3 & 1
+\end{array}\right]$$
+
+Entonces
+$$A+B=\left[\begin{array}{lll}
+    1+0 & -2+2 & 4+(-4) \\
+    2+1 & -1+3 & 3+1
+    \end{array}\right]=\left[\begin{array}{lll}
+    1 & 0 & 0 \\
+    3 & 2 & 4
+    \end{array}\right]$$
+
+La suma de las matrices A y B sólo se define cuando A y B tienen el mismo número de filas y el mismo número de columnas; es decir, \textbf{sólo cuando A y B son del mismo tamaño}. Por lo tanto al escribir A + B entendemos que A y B tienen el mismo tamaño. Además la suma de matrices satisface la \textbf{propiedad asociativa. A + (B + C) = (A + B) + C}
+
+\begin{tcolorbox}[colback=blue!10!white,colframe=blue!60!black,title=Multiplicación por un Escalar]
+    Si $A = [a_{ij}]$ es una matriz de $m \times n$ y $r$ es un número real, el múltiplo escalar de A por $r$, $rA$, es la matriz $B = [b_{ij}]$ de $m \times n$, donde $$b_{ij} = ra_{ij} (i \leq i \leq m, 1 \leq j \leq n)$$
+    Es decir, B se obtiene multiplicando cada elemento de A por $r$
+\end{tcolorbox}
+
+Con la suma y Multiplicación de matrices podemos obtener una "resta" de matrices. Si $A$ y $B$ son matrices de $m \times n$, escribimos $A + (-1)B$, lo cual es $A - B$, y denominamos a esto como diferencia de $A$ y $B$.
+
+Sean
+$$A=\left[\begin{array}{rrr}
+2 & 3 & -5 \\
+4 & 2 & 1
+\end{array}\right] \quad \text { y } \quad B=\left[\begin{array}{rrr}
+2 & -1 & 3 \\
+3 & 5 & -2
+\end{array}\right]$$
+
+Entonces
+
+$$A-B=\left[\begin{array}{llr}
+2-2 & 3+1 & -5-3 \\
+4-3 & 2-5 & 1+2
+\end{array}\right]=\left[\begin{array}{rrr}
+0 & 4 & -8 \\
+1 & -3 & 3
+\end{array}\right]$$
+
+\begin{large}
+    Ejemplo
+\end{large}
+
+Sea $\mathbf{p}=\left[\begin{array}{lll}18.95 & 14.75 & 8.60\end{array}\right]$ un vector que representa los precios actuales de tres artículos almacenados en una bodega. Suponga que el almacén anuncia una venta en donde cada uno de estos artículos tiene un descuento de 20 por ciento.
+(a) Determine un vector que proporcione el cambio en el precio de cada uno de los tres artículos.
+(b) Determine un vector que proporcione los precios nuevos de los artículos.
+
+(a) Como el precio de cada artículo se reduce $20 \%$, el vector proporciona la reducción de los precios para los tres artículos.
+
+$$\begin{aligned}
+    0.20 \mathbf{p} & =\left[\begin{array}{lll}
+    (0.20) 18.95 & (0.20) 14.75 & (0.20) 8.60
+    \end{array}\right] \\
+    & =\left[\begin{array}{lll}
+    3.79 & 2.95 & 1.72
+    \end{array}\right]
+\end{aligned}$$
+
+
+(b) Los precios nuevos de los artículos están dados mediante la expresión
+
+$$ \begin{aligned}
+\mathbf{p}-0.20 \mathbf{p} & =\left[\begin{array}{lll}
+18.95 & 14.75 & 8.60
+\end{array}\right]-\left[\begin{array}{lll}
+3.79 & 2.95 & 1.72
+\end{array}\right] \\
+& =\left[\begin{array}{lll}
+15.16 & 11.80 & 6.88
+\end{array}\right] 
+\end{aligned} $$
+
+Observe que esta expresión también puede escribirse como
+$$\mathbf{p}-0.20 \mathbf{p}=0.80 \mathbf{p}$$
+
+\begin{tcolorbox}[colback=blue!10!white,colframe=blue!60!black,title=Combinación Lineal]
+    Si $A_1,A_2,\dots, A_k$ son matrices de $m \times n$ y $c_1,c_2,\dots, c_k$son números reales, entonces una expresión de la forma $$c_1A_1 + c_2A_2 + \dots + c_kA_k$$ se denomina \textbf{combinación lineal} de $A_1, A_2,\dots , A_k$. Y $c_1, c_2, \dots, c_k$ se llaman coeficientes.
+\end{tcolorbox}
+
+Si
+
+\begin{equation*}
+   A_1=\begin{bmatrix}
+        \begin{array}{rrr}
+            0 &-3 & 5\\
+            2 & 2 & 4\\
+            1 &-2 &-3\\
+        \end{array}
+    \end{bmatrix}
+    \quad y \quad 
+    A_2=\begin{bmatrix}
+        \begin{array}{rrr}
+            5 & 2 & 3\\
+            6 & 2 & 3\\
+            -1& -2& 3  
+        \end{array}
+    \end{bmatrix}
+\end{equation*}
+
+entonces $C= 3A_1 - \frac{1}{2}A_2$ es una combinación lineal de $A_1$ y $A_2$
+
+\begin{equation*}
+    C= 3 \begin{bmatrix}
+        \begin{array}{rrr}
+            0 &-3 & 5\\
+            2 & 2 & 4\\
+            1 &-2 &-3\\
+        \end{array}
+    \end{bmatrix}
+    -\frac{1}{2}\begin{bmatrix}
+        \begin{array}{rrr}
+            5 & 2 & 3\\
+            6 & 2 & 3\\
+            -1& -2& 3  
+        \end{array}
+    \end{bmatrix}
+    = \begin{bmatrix}
+        \begin{array}{rrr}
+            -\frac{5}{2} & -10  & -\frac{27}{2} \\
+            3 & 8 & \frac{21}{2} \\
+            \frac{7}{2} & -5 & -\frac{21}{2}  
+        \end{array}
+    \end{bmatrix}
+\end{equation*}
+
+\begin{tcolorbox}[colback=blue!10!white,colframe=blue!60!black,title=Transpuesta de una Matriz]
+    Si $A = [a_{ij}]$ es una matriz de $m \times n$, la matriz $A^{T} = \left[a_{ij}^{T}\right]$ de $m \times n$, donde $$a_{ij}^{T} = a_{ji} \quad\quad (1\leq i \leq n, 1 \leq j \leq m)$$ es la \textbf{transpuesta} de A. En consecuencia, las entradas en cada fila de $A^T$ son las entradas correspondientes en la column
+\end{tcolorbox}
+
+Sean
+
+\begin{equation*}
+    A = \begin{bmatrix}
+        \begin{array}{rrr}
+            4 & -2 & 3\\ 
+            0 & 5 & -2
+        \end{array}
+    \end{bmatrix}
+    , \quad B = \begin{bmatrix}
+        \begin{array}{rrr}
+            6 & 2 & -4\\ 
+            3 & -1 & 2\\
+            0 & 4 & 3
+        \end{array}
+    \end{bmatrix}
+    , \quad C = \begin{bmatrix}
+        \begin{array}{rr}
+            5 & 4\\ 
+            -3 & 2\\
+            2 & -3
+        \end{array}
+    \end{bmatrix}
+    , \quad D = \begin{bmatrix}
+        \begin{array}{rrr}
+            3 & -5 & 1
+        \end{array}
+    \end{bmatrix}
+    , \quad E = \begin{bmatrix}
+        \begin{array}{r}
+            2 \\ 
+            -1\\
+            3
+        \end{array}
+    \end{bmatrix}
+\end{equation*}
+
+Entonces 
+
+\begin{equation*}
+    A^T = \begin{bmatrix}
+        \begin{array}{rrr}
+            4 & 0 \\ 
+            -2 & 5 \\
+            3 & -2
+        \end{array}
+    \end{bmatrix}
+    , \quad B^T = \begin{bmatrix}
+        \begin{array}{rrr}
+            6 & 3 & 0\\ 
+            2 & -1 & 4\\
+            -4 & 2 & 3
+        \end{array}
+    \end{bmatrix}
+    , \quad C^T = \begin{bmatrix}
+        \begin{array}{rrr}
+            5 & -3 & 2\\ 
+            4 & 2 & -3\\
+        \end{array}
+    \end{bmatrix}
+    , \quad D^T = \begin{bmatrix}
+        \begin{array}{r}
+            3 \\
+            -5\\ 
+            1
+        \end{array}
+    \end{bmatrix}
+    , \quad E^T = \begin{bmatrix}
+        \begin{array}{rrr}
+            2 & -1 & 3
+        \end{array}
+    \end{bmatrix}
+\end{equation*}
+
+\end{document}
