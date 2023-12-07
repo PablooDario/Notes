@@ -5,6 +5,8 @@
 \graphicspath{{./img/}}
 \usepackage{amsmath}
 \usepackage{tcolorbox}
+\usepackage{tikz-cd}
+\usepackage{amssymb}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{1em} 
 
@@ -95,9 +97,9 @@ Para resolver las siguientes ecuaciones lineales usaremos el método de elminaci
 
 \begin{tcolorbox}[colback=blue!10!white,colframe=blue!60!black,title=Operaciones Elementales por filas]
     \begin{itemize}
-        \item[1.] Intercambiar dos ecuaciones.
+        \item[1.] Intercambiar dos ecuaciones o dos filas.
         \item[2.] Multiplicar una ecuación por una constante diferente de cero.
-        \item[3.] Sumar un múltiplo de una ecuación a la otra.
+        \item[3.] Multiplicar una ecuación y sumarla a otra.
     \end{itemize}
 \end{tcolorbox}
 
@@ -168,7 +170,7 @@ Por lo tanto, una solución para el sistema lineal es:
 Donde $r$ es cualquier número real. Esto significa que el sistema linea tiene un número infinito de soluciones. Cada vez que asignamos un valor a $r$,obtenemos otra solución.
 
 \begin{large}
-    Ejemplo 3
+    \textbf{Ejemplo 3}
 \end{large}
 Considere el sistema lineal
 
@@ -231,7 +233,7 @@ Antes de resolver otros sistemas de ecuaciones es conveniente introducir una not
 \end{tcolorbox}
 
 \begin{large}
-    Matriz de Coeficientes
+    \textbf{Matriz de Coeficientes}
 \end{large}
 
 Es aquella matriz que únicamente contiene los coeficientes de las incógnitas.
@@ -254,7 +256,7 @@ Es aquella matriz que únicamente contiene los coeficientes de las incógnitas.
 \end{equation*}
 
 \begin{large}
-    Matriz Aumentada
+    \textbf{Matriz Aumentada}
 \end{large}
 
 Es aquella matriz que representa un sistema de ecuaciones lineales, donde la línea vertical separa la parte de los coeficientes (a la izquierda) de la parte de los términos independientes (a la derecha).
@@ -273,6 +275,25 @@ Es aquella matriz que representa un sistema de ecuaciones lineales, donde la lí
         3 & 1 & -2& 4
     \end{array}\right]
 \end{equation*}
+
+También se puede escribir como $Ax = b$, donde 
+
+\begin{alignat*}{2}
+    x= \begin{bmatrix}
+        x_1\\
+        x_2\\
+        \vdots\\
+        x_n
+    \end{bmatrix} 
+& \hspace{ 4em}%
+\quad y \quad b = 
+    \begin{bmatrix}
+        b_1\\
+        b_2\\
+        \vdots\\
+        b_m
+    \end{bmatrix} 
+\end{alignat*}
 
 Se ha visto que multiplicar una ecuación por un número diferente de cero da por resultado una nueva ecuación equivalente, si se suma un múltiplo de una ecuación a otra del sistema se obtiene otra ecuación equivalente y por último, si se intercambian dos ecuaciones en un sistema de ecuaciones se obtiene un sistema equivalente. Como se vió anteriormente estas son las operaciones elementales por filas. El proceso de aplicar las operaciones elementales por filas para simplificar una matriz aumentada se llama reducción por filas. 
 
@@ -294,7 +315,7 @@ Una matriz se encuentra en forma escalonada si cumple con las siguientes propied
 \end{tcolorbox}
 
 \begin{large}
-    Ejemplo Forma Escalonada
+    \textbf{Ejemplo Forma Escalonada}
 \end{large}
 
 Las entradas principales (.) pueden tener cualquier valor diferente de 0; las otras entradas (*) pueden tener cualquier valor (incluyendo cero).
@@ -317,11 +338,11 @@ Las entradas principales (.) pueden tener cualquier valor diferente de 0; las ot
 \end{alignat*}
 
 \begin{tcolorbox}[colback=green!20!white,colframe=green!80!black,title=Pivote]
-    Un pivote en una matriz es aquel elemento que corresponde a una entrada principal en la forma escalonada reducida de dicha matriz.
+    Un pivote en una matriz es el primer componenete diferente de cero en una fila de una matriz.
 \end{tcolorbox}
 
 \begin{large}
-    Ejemplo Forma Escalonada Reducida
+    \textbf{Ejemplo Forma Escalonada Reducida}
 \end{large}
 
 Los pivotes son 1 y los demás elementos en su columna son 0.
@@ -348,6 +369,206 @@ Cualquier matriz distinta de cero puede reducirse en más de una matriz en forma
 \begin{tcolorbox}[colback=green!20!white,colframe=green!80!black,title=Unicidad de la Forma Escalonada Reducida]
     Cada matriz es equivalente en fila a una y sólo una matriz escalonada reducida.
 \end{tcolorbox}
+
+\begin{large}
+    Ejemplo Forma Escalonada por renglones
+\end{large}
+
+\begin{equation*}
+    \begin{bmatrix}
+        \begin{array}{rrr|r}
+            2 & 4 & 6 & 18\\
+            4 & 5 & 6 & 24\\
+            3 & 1 & -2 & 4
+        \end{array}
+    \end{bmatrix}
+    \xrightarrow{\stackrel{R_1 \rightarrow \frac{1}{2}R_1}{}}
+    \begin{bmatrix}
+        \begin{array}{rrr|r}
+            1 & 2 & 3 & 9\\
+            4 & 5 & 6 & 24\\
+            3 & 1 & -2 & 4
+        \end{array}
+    \end{bmatrix}
+\end{equation*}
+
+\begin{equation*}
+    \xrightarrow{\overset{\begin{aligned} R_2 \rightarrow R_2 - 4R_1 \\ R_3 \rightarrow R_3 - 3R_1\end{aligned}}{}} 
+    \begin{bmatrix}
+        \begin{array}{rrr|r}
+            1& 2 & 3 & 9\\
+            0 &-3 &-6 &-12 \\
+            0&-5 &-11 &-23
+        \end{array}
+    \end{bmatrix}
+    \xrightarrow{\stackrel{R_2 \rightarrow \frac{1}{3}R_2}{}}
+    \begin{bmatrix}
+        \begin{array}{rrr|r}
+            1 & 2 & 3 & 9\\
+            0 & 1 & 2 & 4\\
+            0 & 5 &-11&-23
+        \end{array}
+    \end{bmatrix}
+\end{equation*}
+
+Ya casi tenemos la matriz escalonada, solo tenemos que hacer cero el valor de la segunda incóginita de la tercer ecuación
+
+\begin{equation*}
+    \xrightarrow{\overset{R_3 \rightarrow R_3 + 5R_2}{}} 
+    \begin{bmatrix}
+        \begin{array}{rrr|r}
+            1 & 2 & 3 & 9\\
+            0 & 1 & 2 & 4 \\
+            0 & 0 &-1 &-3
+        \end{array}
+    \end{bmatrix}
+\end{equation*}
+
+\begin{large}
+    Sustitución Hacia Atrás
+\end{large}
+
+La matriz aumentada del sistema se encuentran ahora en la forma escalonada por renglones y se puede ver de inmediato que $x_3 = 3$. Después se usa la sustitución hacia atrás para despejar primero$x_2$ y después $x_1$. La segunda ecuación queda $x_2 + 2x_3 = 4$. Entonces $x_2 + 2(3) = 4$ y $x_2 =-2$. De igual manera, de la primera ecuación se obtiene $x_1 + 2(-2) + 3(3) = 9$  con lo que se obtiene que $x1 = 4$. Así, de nuevo se obtiene la solución $(4, -2, 3)$. El método de solución que se acaba de emplear se llama \textbf{eliminación gaussiana}.
+
+\begin{tcolorbox}[colback=blue!10!white,colframe=blue!60!black,title=Métodos]
+    \begin{large}
+        \textbf{Eliminación de Gauss Jordan}
+    \end{large}
+
+    Se reduce por fila la matriz aumentada a la forma escalonada reducida por filas usando el método de eliminación. Si en algún momento hay un cero en la diagonal principal, se intercambian filas para eliminar el cero de la diagonal principal. \newline
+
+    \begin{large}
+        \textbf{Eliminación Gaussiana}
+    \end{large}
+
+    Se reduce por renglón la matriz aumentada a la forma escalonada por filas, se despeja el valor de la última incógnita y después se usa la sustitución hacia atrás para las demás incógnitas.
+\end{tcolorbox}
+
+La eliminación de Gauss-Jordan es el proceso de resolución de un sistema de ecuaciones mediante la reducción por renglones de la matriz aumentada a la forma escalonada reducida por renglones.
+
+La eliminación gaussiana es el proceso de resolver un sistema de ecuaciones al reducir por renglones la matriz aumentada a la forma escalonada por renglones y utilizando la sustitución hacia atrás.
+
+Al resolver sistemas de ecuaciones en una computadora se
+prefiere el método de eliminación gaussiana porque significa menos operaciones elementales por filas, aunque a veces es esencial obtener la forma escalonada reducida por renglones de una matriz, en estos casos la eliminación de Gauss-Jordan es el método preferido.
+
+\begin{large}
+    \textbf{Solución de un sistema de 2 ecuaciones con 4 incógnitas}
+\end{large}
+
+\begin{equation*}
+    \begin{aligned}
+    x_1 &+ 3x_2 &- 5x_3 &+ x_4 &= 4 \\
+    2x_1 &+ 5x_2 &- 2x_3 &+ 4x_4 &= 6    
+    \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+    \begin{bmatrix}
+        \begin{array}{rrrr|r}
+            1 & 3 & -5 & 1 & 4\\
+            2 & 5 & -2 & 4 & 6
+        \end{array}
+    \end{bmatrix}
+\xrightarrow{\stackrel{R_2 \rightarrow R_2 - 2R_1}{}}
+    \begin{bmatrix}
+        \begin{array}{rrrr|r}
+            1 & 3 & -5 & 1 & 4\\
+            0 & -1 & 8 & 2 & -2
+        \end{array}
+    \end{bmatrix}
+\end{equation*}
+
+\begin{equation*}
+    \xrightarrow{\stackrel{R_2 \rightarrow -R_2}{}}
+    \begin{bmatrix}
+        \begin{array}{rrrr|r}
+            1 & 3 & -5 & 1 & 4\\
+            0 & 1 & -8 & -2 & 2
+        \end{array}
+    \end{bmatrix}
+\xrightarrow{\stackrel{R_1 \rightarrow R_1 - 3R_2}{}}
+    \begin{bmatrix}
+        \begin{array}{rrrr|r}
+            1 & 0 & 19 & 7 & -2\\
+            0 & 1 & -8 & -2 & 2
+        \end{array}
+    \end{bmatrix}
+\end{equation*}
+
+La matriz de coeficiente se encuentra en forma escalonada y reducida por renglones. Es evidente que existe un número infinito de soluciones. Los valores de las variables $x_3$ y $x_4$ se pueden escoger de manera arbitraria. Entonces $$x_2 = 2 + 8x_3 + 2x_4$$ $$x_1 = -2 -19x_3 -7x_4$$ Por lo tanto, todas las soluciones se representan por $$(-2 -19x_3 -7x_4, 2 + 8x_3 + 2x_4, x_3, x_4)$$ Por ejemplo, si $x3 = 1$ y $x_4 = 2$ se obtiene la solución $(235, 14, 1, 2)$.
+
+\begin{tcolorbox}[colback=green!20!white,colframe=green!80!black,title=Soluciones Infinitas]
+    Cuando se tienen más incógnitas que ecuaciones en un sistema lineal, se dice que el sistema es "indeterminado". Esto significa que hay infinitas soluciones posibles, y no puedes determinar un único conjunto de valores para las incógnitas que satisfaga todas las ecuaciones.
+
+    Es importante destacar que la presencia de soluciones infinitas no implica necesariamente que todas las combinaciones de valores sean válidas. Pueden existir restricciones adicionales que limiten las soluciones aceptables.
+\end{tcolorbox}
+
+\begin{large}
+    \textbf{Problema de Pesca}
+\end{large}
+
+Un departamento de pesca y caza del estado proporciona tres tipos de comida a un lago que alberga a tres especies de peces. Cada pez de la especie 1 consume cada semana un promedio de 1 unidad del alimento A, 1 unidad del alimento B y 2 unidades del alimento C. Cada pez de la especie 2 consume cada semana un promedio de 3 unidades del alimento A, 4 del B y 5 del C. Para un pez de la especie 3, el promedio semanal de consumo es de 2 unidades del alimento A, 1 unidad del alimento B y 5 unidades del C. Cada semana se proporcionan al lago 25 000 unidades del alimento A, 20 000 unidades del alimento B y 55 000 del C. Si suponemos que los peces se comen todo el alimento, ¿cuántos peces de cada especie pueden coexistir en el lago? Sean x1, x2 y x3 el número de peces de cada especie que hay en el ambiente del lago.
+
+\begin{equation*}
+    \begin{aligned}
+        x_1 &+ 3x_2 &+ 2x_3 &= 25,000\\
+        x_1 &+ 4x_2 &+ x_3 &= 20,000\\
+        2x_1 &+ 5x_2 &+ 5x_3 &= 55,000
+    \end{aligned}
+\end{equation*}
+
+La matriz aumentada del sistema es:
+
+\begin{equation*}
+    \begin{bmatrix}
+        \begin{array}{rrr|r}
+            1 & 3 & 2 & 25,000\\
+            1 & 4 & 1 & 20,000 \\
+            2 & 5 & 5 & 55,000
+        \end{array}
+    \end{bmatrix}
+\end{equation*}
+
+Utilizando reducción de Gauss-Jordan
+
+\begin{equation*}
+    \xrightarrow{\overset{\begin{aligned} R_2 \rightarrow R_2 - R_1 \\ R_3 \rightarrow R_3 - 2R_1\end{aligned}}{}} 
+    \begin{bmatrix}
+        \begin{array}{rrr|r}
+            1& 3 & 2 & 25,000\\
+            0 & 1 &-1 &-5,000 \\
+            0 & -1 & 1 & 5,000
+        \end{array}
+    \end{bmatrix}
+    \xrightarrow{\overset{\begin{aligned} R_1 \rightarrow R_1 - 3R_2 \\ R_3 \rightarrow R_3 + R_2\end{aligned}}{}} 
+    \begin{bmatrix}
+        \begin{array}{rrr|r}
+            1 & 0 & 5 & 40,000\\
+            0 & 1 & -1 & -5,000\\
+            0 & 0 & 0 & 0
+        \end{array}
+    \end{bmatrix}
+\end{equation*}
+
+Por consiguiente, se tiene un número infinito de soluciones dada por: 
+
+\begin{equation*}
+    \begin{aligned}
+        x_1 = 40,000 - 5x_3\\
+        x_2 = x_3 - 5,000\\
+        x_3 = \mathbb{Z}^+
+    \end{aligned}
+\end{equation*}
+
+Por supuesto, como se vio anteriormente, que un sistema tenga infinitas soluciones no significa que todas las soluciones sean válidas. En este caso los valores que pueden tomar las incógnitas deben ser enteros, pues no se puede tener por ejemplo 5.6 peces; además se debe tener $x_1 \geq 0, x_2 \geq 0$ y $x_3 \geq 0$. Como $x_2 = x_3 - 5,000 \geq 0$, se tiene $x_3 \geq 5,000$. Esto significa que $0 \leq x_1 \leq 40,000 - 5(5,000)= 15,000$. Por último, como $40,000 - 5x_3 \geq 0$, se tiene que $x3 \leq 8,000$. Esto significa que las poblaciones que pueden convivir en el lago con todo el alimento consumido son: 
+
+\begin{equation*}
+    \begin{aligned}
+        x_1 = 40,000 -5x_3\\
+        x_2 = x_3 - 5,000\\
+        5,000 \leq x_3 \leq 8,000
+    \end{aligned}
+\end{equation*}
 
 \section{Matrices}
 
