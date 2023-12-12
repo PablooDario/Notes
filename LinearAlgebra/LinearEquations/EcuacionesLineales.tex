@@ -304,12 +304,12 @@ Una matriz se encuentra en forma escalonada si cumple con las siguientes propied
 \begin{tcolorbox}[colback=blue!10!white,colframe=blue!60!black,title=Propiedades de la Forma Escalonada]
     \begin{itemize}
         \item[-] Todas las filas cuyos elementos son todos cero aparecen en la parte inferior de la matriz.
-        \item[-] La entrada principal en cualquier fila está a la derecha de la entrada principal de la fila anterior
-        \item[] Todas las entradas en una columna por debajo de un pivote son ceros.
+        \item[-] La entrada principal en cualquier fila está a la derecha de la entrada principal de la fila anterior.
+        \item[-] Todas los elementos en una columna por debajo de una entrada principal son ceros.
     \end{itemize}   
     Una matriz se encuentra en la \textbf{forma escalonada reducida por filas} si se cumplen las siguientes condiciones:
     \begin{itemize}
-        \item[-] La entrada principal en cualquier fila es 1.
+        \item[-] La entrada principal en cualquier fila no nula es 1.
         \item[-] La entrada principal es el único elemento distinto de 0 en su columna.
     \end{itemize}    
 \end{tcolorbox}
@@ -338,7 +338,7 @@ Las entradas principales (.) pueden tener cualquier valor diferente de 0; las ot
 \end{alignat*}
 
 \begin{tcolorbox}[colback=green!20!white,colframe=green!80!black,title=Pivote]
-    Un pivote en una matriz es el primer componenete diferente de cero en una fila de una matriz.
+    Un pivote en una matriz es la primera entrada no nula en una fila, por lo que los valores de los pivotes en una matriz en la forma escalonada puede ser cualquiera diferente de 0, mientras que en una escalonada reducida el valor de sus pivotes es únicamnete 1.
 \end{tcolorbox}
 
 \begin{large}
