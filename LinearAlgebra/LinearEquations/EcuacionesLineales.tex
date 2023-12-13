@@ -23,7 +23,7 @@ En matemáticas la palabra “lineal” tiene un significado muy amplio. Una gra
 \begin{tcolorbox}[colback=green!20!white,colframe=green!80!black,title=Propiedades de la Recta]
     \begin{itemize}
         \item[-] La \textbf{pendiente} $m$ de una recta que pasa por los puntos $(x_1, y_1)$ y $(x_2, y_2)$ está dada por $$m=\frac{y_2-y_1}{x_2-x_1} = \frac{\Delta y}{\Delta x} \quad si \quad x_1 \neq x_2$$
-        \item[-] Si $x_2 - x_1 = 0$ y $y2 \neq y1$, entonces la recta es vertical y se dice que la pendiente es indefinida.
+        \item[-] Si $x_2 = x_1$ y $y_2 \neq y_1$, entonces la recta es vertical y se dice que la pendiente es indefinida.
         \item[-] Cualquier recta (a excepción de aquella que tiene una pendiente indefinida) se puede describir con su ecuación en la forma pendiente-ordenada al origen $\mathbf{y= mx + b}$, donde $m$ es la pendiente de la recta y $b$ es la ordenada al origen
         \item[-] Dos rectas distintas son paralelas si y sólo si tienen la misma pendiente. 
         \item[-] Las rectas paralelas al eje $x$ tienen pendiente cero
@@ -32,7 +32,11 @@ En matemáticas la palabra “lineal” tiene un significado muy amplio. Una gra
 
 \end{tcolorbox}
 
-Una ecuación lineal en las variables $ x_1,x_2,\dots, x_n $ es una ecuación que puede escribirse de la forma $ a_1x_1,a_2x_2,\dots, a_nx_n=b$ donde $b$ y los coeficientes $a_1,a_2,\dots, a_n$ son números reales o complejos, el subíndice n puede ser cualquier número entero positivo. En los problemas de la vida real, $n$ puede ser 50 o 5000, o incluso mayor. Aquí se utiliza la palabra lineal porque la gráfica de la ecuación es una linea recta.
+\begin{large}
+    \textbf{Ecuaciones Lineales}
+\end{large}
+
+Una ecuación lineal en las variables $ x_1,x_2,\dots, x_n $ es una ecuación que puede escribirse de la forma $ a_1x_1,a_2x_2,\dots, a_nx_n=b$ donde $b$ y los coeficientes $a_1,a_2,\dots, a_n$ son números reales o complejos, el subíndice $n$ puede ser cualquier número entero positivo. En los problemas de la vida real, $n$ puede ser 50 o 5000, o incluso mayor. Aquí se utiliza la palabra lineal, porque en la ecuación algebraica cada término tiene un exponente de 1 y, cuando se representa gráficamente, siempre resulta una línea recta, la cual dependiendo del número de incógnitas se puede extrapolar a difernetes dimensiones.
 
 En muchas apliciones se nos da $b$ y a las constantes $ a_1,a_2,\dots, a_n $ donde debemos determinar los números $ x_1,x_2,\dots, x_n $ denominados \textbf{incógnitas}, que satisfacen la ecuación.
 
@@ -53,7 +57,7 @@ Un \textbf{sistema de $m$ ecuaciones lineales con $n$ incógnitas $ x_1,x_2,\dot
 
 \pagebreak
 
-Una solución del sistema es una lista $s_1, s_2, \dots, s_n$ de números que hace que cada ecuación sea una afirmación verdadera cuando los valores $(s_1, s_2, \dots, s_n)$ se sustituyen por $(x_1, x_2, \dots, x_n)$, respectivamente. El conjunto de todas las soluciones posibles se denomina conjunto de soluciones del sistema lineal. Dos sistemas lineales se denominan equivalentes si tienen el mismo conjunto de soluciones. Las preguntas que surgen son: ¿tiene este sistema varias soluciones y, de ser así, cuántas? 
+Una solución del sistema es una lista $s_1, s_2, \dots, s_n$ de números que hace que cada ecuación sea una afirmación verdadera cuando los valores $(s_1, s_2, \dots, s_n)$ se sustituyen por $(x_1, x_2, \dots, x_n)$, respectivamente. El conjunto de todas las soluciones posibles se denomina conjunto de soluciones del sistema lineal. Dos sistemas lineales se denominan equivalentes si tienen el mismo conjunto de soluciones. Las preguntas que surgen son: ¿tiene este sistema varias soluciones? y, de ser así, ¿cuántas? 
 
 Encontrar el conjunto solución de un sistema de dos ecuaciones lineales en dos variables es fácil porque cada ecuación corresponde a una línea recta, por lo cual la solución equivale a encontrar la intersección de dos rectas. Dos rectas no tienen por qué intersecarse en un único punto; si no son paralelas, entonces se intersectan en un punto, por el contrario, si son paralelas entonces o no se intersectan o son la misma recta y se intersectan en infinitos puntos.
 
@@ -86,10 +90,10 @@ $$\begin{matrix}
 La gráfica de cada una de estas ecuaciones es un plano, y se denota con $P_1, P_2$ y $P_3$ respectivamente. Como en el caso de un sistema lineal de dos ecuaciones con dos incógnitas, el sistema lineal puede tener una solución única, no tener solución o tener una infinidad de soluciones. Estos 3 casos se extrapolan a sistemas de ecuaciones de $m \times n$.
 
 \begin{figure}[ht]
-  \centerline{\includegraphics[width=0.6\textwidth]{image4.png}}
-  \caption{Ilustración de casos con 3 incógnitas}
-  \label{}
-\end{figure}
+    \centerline{\includegraphics[width=0.5\textwidth]{image4.png}}
+    \caption{Ilustración de casos con 3 incógnitas}
+    \label{}
+  \end{figure}
 
 \subsection{Resolviendo Sistemas de Ecuaciones}
 
@@ -138,7 +142,7 @@ Considere el sistema lineal
     \end{aligned}
 \end{equation*}
 
-Para eliminar $x$, sumamos (-2) veces la primera ecuación a la segunda y obtenemos
+Para eliminar $x$, sumamos (-2) veces la primera ecuación a la segunda y obtenemos:
 
 \begin{equation*}
     \begin{aligned}
@@ -147,27 +151,23 @@ Para eliminar $x$, sumamos (-2) veces la primera ecuación a la segunda y obtene
     \end{aligned}
 \end{equation*}
 
-Despejamos $y$ en la segunda ecuación para obtener $$y=z-4$$ donde $z$ puede ser cualquier numero real. Entonces, con base en la primera ecuación obtenemos 
+Despejamos $y$ en la segunda ecuación para obtener $$y=z-4$$ 
 
-\begin{equation*}
-    \begin{matrix}
-            x + 2y - 3z = -4\\
-            x = -4 -2y +3z\\
-            x= z + 4
-    \end{matrix}
-\end{equation*}
+donde $z$ puede ser cualquier numero real. Entonces, sustituyendo a $y$ y despejando a $x$ en la primera ecuación obtenemos: $$x = z + 4$$
 
 Por lo tanto, una solución para el sistema lineal es: 
 
 \begin{equation*}
     \begin{aligned}
-            x & = r + 4\\
-            y & = r - 4\\
-            z &= r
+            x & = \mathbb{R} + 4\\
+            y & = \mathbb{R} - 4\\
+            z &= \mathbb{R}
     \end{aligned}
 \end{equation*}
 
-Donde $r$ es cualquier número real. Esto significa que el sistema linea tiene un número infinito de soluciones. Cada vez que asignamos un valor a $r$,obtenemos otra solución.
+Esto significa que el sistema lineal tiene un número infinito de soluciones. Cada vez que asignamos un valor a $z$, obtenemos otra solución.
+
+\pagebreak
 
 \begin{large}
     \textbf{Ejemplo 3}
@@ -182,7 +182,7 @@ Considere el sistema lineal
     \end{aligned}
 \end{equation*}
 
-Para eliminar $x$, sumamos (-2) veces la primera ecuación a la segunda y (-3) veces la primera ecuación a la tercera, lo que da por resultado
+Para eliminar $x$ de la segunda y tercer ecuación, sumamos (-2) veces la primera ecuación a la segunda y (-3) veces la primera ecuación a la tercera, lo que da por resultado
 
 \begin{equation*}
     \begin{aligned}
@@ -192,7 +192,7 @@ Para eliminar $x$, sumamos (-2) veces la primera ecuación a la segunda y (-3) v
     \end{aligned}
 \end{equation*}
 
-Después eliminamos $y$, por lo que multiplicamos la tercera ecuación por $-\frac{1}{5}$ para obtener
+Ahora queremos eliminar $y$ de la tercera ecuación, por lo que multiplicamos la tercera ecuación por $-\frac{1}{5}$ obteniendo:
 
 \begin{equation*}
     \begin{aligned}
@@ -212,7 +212,7 @@ Intercambiamos la segunda y tercer ecuación
     \end{aligned}
 \end{equation*}
 
-Ahora sumamos 7 veces la segunda ecuación a la tercera, para obtener
+Finalmente sumamos 7 veces la segunda ecuación a la tercera, eliminando así a $y$ de la tercer ecuación
 
 \begin{equation*}
     \begin{aligned}
@@ -222,15 +222,34 @@ Ahora sumamos 7 veces la segunda ecuación a la tercera, para obtener
     \end{aligned}
 \end{equation*}
 
-Por lo que $z=3$ y sustituyendo este valor en la segunda ecuación encontramos que $y=-2$. Al sustituir estos valores en la primera ecuación, finalmente obtenemos $x=1$ 
+Así bien, obtenemos que $z=3$ y sustituyendo este valor en la segunda ecuación encontramos que $y=-2$. Al sustituir estos valores en la primera ecuación, finalmente obtenemos $x=1$ 
 
-\subsection{Gauss-Jordan}
+\begin{equation*}
+    \begin{aligned}
+            x = 1 \\
+            y = -2\\
+            z = 3\\
+    \end{aligned}
+\end{equation*}
+
+\pagebreak
+
+\subsection{Matrices}
 
 Antes de resolver otros sistemas de ecuaciones es conveniente introducir una notación que simplifica la escritura de cada paso del procedimiento mediante el concepto de matriz.
 
 \begin{tcolorbox}[colback=blue!10!white,colframe=blue!60!black,title=Definición]
-    Una matriz A de $m \times n$ es un arreglo rectangular de $mn$ números reales (o complejos) ordenados en m filas horizontales y n columnas verticales
+    Una matriz A de $m \times n$ es un arreglo rectangular de $mn$ números reales (o complejos) ordenados en m filas horizontales y n columnas verticales. Se pueden representar con paréntesis o corchetes.
 \end{tcolorbox}
+
+\begin{equation*}
+    \begin{pmatrix}
+            a_{11} & a_{12} & \dotsb & a_{1n}\\
+            a_{21} & a_{22} & \dotsb & a_{2n}\\
+            \vdots & \vdots & \ddots & \vdots\\
+            a_{m1} & a_{m2} & \dotsb & a_{mn}
+    \end{pmatrix}
+\end{equation*}
 
 \begin{large}
     \textbf{Matriz de Coeficientes}
@@ -240,12 +259,31 @@ Es aquella matriz que únicamente contiene los coeficientes de las incógnitas.
 
 \begin{equation*}
     \begin{matrix}
-        \begin{array}{rrrr}
-            2x_1 & 4x_2 & 6x_3 &=18\\
-            4x_1 & 5x_2 & 6x_3 &=24\\
-            3x_1 & x_2  & -2x_3 &=4            
-        \end{array}
+        \begin{aligned}
+            a_{11}x_1 + a_{12}x_2 + \dots + a_{1n}x_n = b_1\\
+            a_{21}x_1 + a_{22}x_2 + \dots + a_{2n}x_n = b_2\\
+            \vdots \phantom{aaaaaaaa} \vdots \phantom{aaaaaaaaaa} \vdots \phantom{aaaaaa} \vdots\\
+            a_{m1}x_1 + a_{m2}x_2 + \dots + a_{mn}x_n = b_m\\
+        \end{aligned}
     \end{matrix}
+    \quad \quad \begin{pmatrix}
+            a_{11} & a_{12} & \dotsb & a_{1n}\\
+            a_{21} & a_{22} & \dotsb & a_{2n}\\
+            \vdots & \vdots & \ddots & \vdots\\
+            a_{m1} & a_{m2} & \dotsb & a_{mn}
+    \end{pmatrix} 
+\end{equation*}
+
+\begin{large}
+    \textbf{Ejemplo}
+\end{large}
+
+\begin{equation*}
+    \begin{aligned}
+            2x_1 + 4x_2 + 6x_3 =18\\
+            4x_1 + 5x_2 + 6x_3 =24\\
+            3x_1 + x_2  - 2x_3 =4            
+    \end{aligned}
     \quad \quad A = \begin{pmatrix}
         \begin{array}{rrr}
             2 & 4 & 6 \\
@@ -263,6 +301,27 @@ Es aquella matriz que representa un sistema de ecuaciones lineales, donde la lí
 
 \begin{equation*}
     \begin{matrix}
+        \begin{aligned}
+            a_{11}x_1 + a_{12}x_2 + \dots + a_{1n}x_n = b_1\\
+            a_{21}x_1 + a_{22}x_2 + \dots + a_{2n}x_n = b_2\\
+            \vdots \phantom{aaaaaaaa} \vdots \phantom{aaaaaaaaaa} \vdots \phantom{aaaaaa} \vdots\\
+            a_{m1}x_1 + a_{m2}x_2 + \dots + a_{mn}x_n = b_m\\
+        \end{aligned}
+    \end{matrix}
+    \quad \quad A = \left(\begin{array}{cccc|c}
+        a_{11} & a_{12} & \dotsb & a_{1n} & b_1\\
+        a_{21} & a_{22} & \dotsb & a_{2n} & b_2\\
+        \vdots & \vdots & \ddots & \vdots & \vdots\\
+        a_{m1} & a_{m2} & \dotsb & a_{mn} & b_m
+    \end{array}\right)
+\end{equation*}
+
+\begin{large}
+    \textbf{Ejemplo}
+\end{large}
+
+\begin{equation*}
+    \begin{matrix}
         \begin{array}{rrrr}
             2x_1 & 4x_2 & 6x_3 &=18\\
             4x_1 & 5x_2 & 6x_3 &=24\\
@@ -275,6 +334,8 @@ Es aquella matriz que representa un sistema de ecuaciones lineales, donde la lí
         3 & 1 & -2& 4
     \end{array}\right)
 \end{equation*}
+
+\pagebreak
 
 También se puede escribir como $Ax = b$, donde 
 
@@ -295,9 +356,11 @@ También se puede escribir como $Ax = b$, donde
     \end{pmatrix} 
 \end{alignat*}
 
-Se ha visto que multiplicar una ecuación por un número diferente de cero da por resultado una nueva ecuación equivalente, si se suma un múltiplo de una ecuación a otra del sistema se obtiene otra ecuación equivalente y por último, si se intercambian dos ecuaciones en un sistema de ecuaciones se obtiene un sistema equivalente. Como se vió anteriormente estas son las operaciones elementales por filas. El proceso de aplicar las operaciones elementales por filas para simplificar una matriz aumentada se llama reducción por filas. 
+Es importante mencionar que el primer número diferente de cero en una fila (si lo hay) se llama \textbf{entrada principal para esa fila}. 
 
-El primer número diferente de cero en una fila (si lo hay) se llama \textbf{entrada principal para esa fila}. 
+\begin{large}
+    \textbf{Forma Escalonada y Escalonada Reducida}
+\end{large}
 
 Una matriz se encuentra en forma escalonada si cumple con las siguientes propiedades:
 
@@ -371,7 +434,7 @@ Cualquier matriz distinta de cero puede reducirse en más de una matriz en forma
 \end{tcolorbox}
 
 \begin{large}
-    Ejemplo Forma Escalonada por renglones
+    Ejemplo Forma Escalonada
 \end{large}
 
 \begin{equation*}
@@ -425,10 +488,18 @@ Ya casi tenemos la matriz escalonada, solo tenemos que hacer cero el valor de la
 \end{equation*}
 
 \begin{large}
-    Sustitución Hacia Atrás
+    \textbf{Sustitución Hacia Atrás}
 \end{large}
 
 La matriz aumentada del sistema se encuentran ahora en la forma escalonada por renglones y se puede ver de inmediato que $x_3 = 3$. Después se usa la sustitución hacia atrás para despejar primero$x_2$ y después $x_1$. La segunda ecuación queda $x_2 + 2x_3 = 4$. Entonces $x_2 + 2(3) = 4$ y $x_2 =-2$. De igual manera, de la primera ecuación se obtiene $x_1 + 2(-2) + 3(3) = 9$  con lo que se obtiene que $x1 = 4$. Así, de nuevo se obtiene la solución $(4, -2, 3)$. El método de solución que se acaba de emplear se llama \textbf{eliminación gaussiana}.
+
+\subsection{Métodos para Resolver Sistemas Lineales}
+
+Se ha visto que multiplicar una ecuación por un número diferente de cero da por resultado una nueva ecuación equivalente, si se suma un múltiplo de una ecuación a otra del sistema se obtiene otra ecuación equivalente y por último, si se intercambian dos ecuaciones en un sistema de ecuaciones se obtiene un sistema equivalente. Como se vió anteriormente estas son las operaciones elementales por filas. El proceso de aplicar las operaciones elementales por filas para simplificar una matriz aumentada se llama reducción por filas. 
+
+La eliminación de Gauss-Jordan es el proceso de resolución de un sistema de ecuaciones mediante la reducción por renglones de la matriz aumentada a la forma escalonada reducida por renglones.
+
+La eliminación gaussiana es el proceso de resolver un sistema de ecuaciones al reducir por renglones la matriz aumentada a la forma escalonada por renglones y utilizando la sustitución hacia atrás.
 
 \begin{tcolorbox}[colback=blue!10!white,colframe=blue!60!black,title=Métodos]
     \begin{large}
@@ -443,10 +514,6 @@ La matriz aumentada del sistema se encuentran ahora en la forma escalonada por r
 
     Se reduce por renglón la matriz aumentada a la forma escalonada por filas, se despeja el valor de la última incógnita y después se usa la sustitución hacia atrás para las demás incógnitas.
 \end{tcolorbox}
-
-La eliminación de Gauss-Jordan es el proceso de resolución de un sistema de ecuaciones mediante la reducción por renglones de la matriz aumentada a la forma escalonada reducida por renglones.
-
-La eliminación gaussiana es el proceso de resolver un sistema de ecuaciones al reducir por renglones la matriz aumentada a la forma escalonada por renglones y utilizando la sustitución hacia atrás.
 
 Al resolver sistemas de ecuaciones en una computadora se prefiere el método de eliminación gaussiana porque significa menos operaciones elementales por filas, aunque a veces es esencial obtener la forma escalonada reducida por renglones de una matriz, en estos casos la eliminación de Gauss-Jordan es el método preferido.
 
