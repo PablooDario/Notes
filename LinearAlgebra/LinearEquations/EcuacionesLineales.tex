@@ -337,7 +337,7 @@ Es aquella matriz que representa un sistema de ecuaciones lineales, donde la lí
 
 \pagebreak
 
-También se puede escribir como $Ax = b$, donde 
+La matriz también se puede escribir como $Ax = b$, donde 
 
 \begin{alignat*}{2}
     x= \begin{pmatrix}
@@ -346,8 +346,7 @@ También se puede escribir como $Ax = b$, donde
         \vdots\\
         x_n
     \end{pmatrix} 
-& \hspace{ 4em}%
-\quad y \quad b = 
+    \quad \text{y} \quad b = 
     \begin{pmatrix}
         b_1\\
         b_2\\
@@ -370,7 +369,7 @@ Una matriz se encuentra en forma escalonada si cumple con las siguientes propied
         \item[-] La entrada principal en cualquier fila está a la derecha de la entrada principal de la fila anterior.
         \item[-] Todas los elementos en una columna por debajo de una entrada principal son ceros.
     \end{itemize}   
-    Una matriz se encuentra en la \textbf{forma escalonada reducida por filas} si se cumplen las siguientes condiciones:
+    Una matriz se encuentra en la \textbf{forma escalonada reducida por filas} si también se cumplen las siguientes condiciones:
     \begin{itemize}
         \item[-] La entrada principal en cualquier fila no nula es 1.
         \item[-] La entrada principal es el único elemento distinto de 0 en su columna.
@@ -524,8 +523,7 @@ Cualquier matriz distinta de cero puede reducirse en más de una matriz en forma
         {\left[\begin{array}{rrrr}
             \colorbox{green}{2} & 3 & 5 & -1  \\
             \colorbox{red}{0} & \colorbox{red}{0} & \colorbox{red}{0} & \colorbox{red}{0}\\
-            0 & \colorbox{green}{-5} & 4 & 7 \\
-            0 & 0 & 0 & 0
+            0 & \colorbox{green}{-5} & 4 & 7
             \end{array}\right],} 
             & {\left[\begin{array}{rrrr}
             \colorbox{green}{3} & 2 & -5 & 4 \\
@@ -540,7 +538,7 @@ Cualquier matriz distinta de cero puede reducirse en más de una matriz en forma
 \end{tcolorbox}
 
 \begin{large}
-    \textbf{Ejemplo Forma Escalonada}
+    \textbf{Ejemplo Convertir una Matriz a Forma Escalonada}
 \end{large}
 
 \begin{equation*}
@@ -575,12 +573,10 @@ Cualquier matriz distinta de cero puede reducirse en más de una matriz en forma
         \begin{array}{rrr|r}
             1 & 2 & 3 & 9\\
             0 & 1 & 2 & 4\\
-            0 & 5 &-11&-23
+            0 & -5 &-11&-23
         \end{array}
     \end{pmatrix}
 \end{equation*}
-
-\pagebreak
 
 Ya casi tenemos la matriz escalonada, solo tenemos que hacer cero el valor de la segunda incóginita de la tercer ecuación
 
@@ -669,9 +665,16 @@ Al resolver sistemas de ecuaciones en una computadora se prefiere el método de 
     \end{pmatrix}
 \end{equation*}
 
-\pagebreak
+La matriz de coeficiente se encuentra en forma escalonada y reducida por renglones. Es evidente que existe un número infinito de soluciones. Los valores de las variables $x_3$ y $x_4$ se pueden escoger de manera arbitraria. Entonces 
 
-La matriz de coeficiente se encuentra en forma escalonada y reducida por renglones. Es evidente que existe un número infinito de soluciones. Los valores de las variables $x_3$ y $x_4$ se pueden escoger de manera arbitraria. Entonces $$x_2 = 2 + 8x_3 + 2x_4$$ $$x_1 = -2 -19x_3 -7x_4$$ Por lo tanto, todas las soluciones se representan por $$(-2 -19x_3 -7x_4, 2 + 8x_3 + 2x_4, x_3, x_4)$$ Por ejemplo, si $x3 = 1$ y $x_4 = 2$ se obtiene la solución $(235, 14, 1, 2)$.
+\begin{equation*}
+    \begin{aligned}
+        x_2 = 2 & +8x_3 + 2x_4\\
+        x_1 =-2 & -19x_3-7x_4 
+    \end{aligned}
+\end{equation*}
+
+Por lo tanto, todas las soluciones se representan por $$(-2 -19x_3 -7x_4, 2 + 8x_3 + 2x_4, x_3, x_4)$$ Por ejemplo, si $x3 = 1$ y $x_4 = 2$ se obtiene la solución $(235, 14, 1, 2)$.
 
 \begin{tcolorbox}[colback=green!20!white,colframe=green!80!black,title=Soluciones en un Sistema con más Incógnitas que Ecuaciones]
     Cuando se tienen más incógnitas que ecuaciones en un sistema lineal, o no se tiene solución (inconsistente) o tiene infinitas soluciones (indeterminado).
