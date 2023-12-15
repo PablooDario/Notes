@@ -597,9 +597,31 @@ Ya casi tenemos la matriz escalonada, solo tenemos que hacer cero el valor de la
 
 La matriz aumentada del sistema se encuentran ahora en la forma escalonada por renglones y se puede ver de inmediato que $x_3 = 3$. Después se usa la sustitución hacia atrás para despejar primero$x_2$ y después $x_1$. La segunda ecuación queda $x_2 + 2x_3 = 4$. Entonces $x_2 + 2(3) = 4$ y $x_2 =-2$. De igual manera, de la primera ecuación se obtiene $x_1 + 2(-2) + 3(3) = 9$  con lo que se obtiene que $x1 = 4$. Así, de nuevo se obtiene la solución $(4, -2, 3)$. El método de solución que se acaba de emplear se llama \textbf{eliminación gaussiana}.
 
+Cuando un sistema está en forma escalonada y no contiene ecuaciones del tipo $0=b$ , con $b$ diferente de cero, entonces cada ecuación no nula tiene una variable básica con un coeficiente distinto de cero. Es posible que las variables básicas estén completamente determinadas (sin variables libres) o que al menos una de las variables básicas pueda expresarse en términos de una o más variables libres. En el primer caso, existe una solución única; en el último caso, hay infinidad de soluciones (una para cada asignación de valores a las variables libres).
+
+\begin{tcolorbox}[colback=green!20!white,colframe=green!80!black,title=Teorema de Unicidad y Existencia]
+    Un sistema lineal es consistente si y solo si la columna más a la derecha de la matriz aumentada no es una columna pivote, es decir, si y solo si una forma escalonada de la matriz aumentada no tiene filas del tipo
+    $[0 \dotsb 0 b]$ con b diferente de cero
+    Si un sistema lineal es consistente, entonces el conjunto solución contiene:
+    \begin{itemize}
+        \item[i.] una única solución, cuando no existen variables libres
+        \item[ii.]una infinidad de soluciones, cuando hay al menos una variable libre
+    \end{itemize}
+\end{tcolorbox}
+
 \subsection{Métodos para Resolver Sistemas Lineales}
 
 Se ha visto que multiplicar una ecuación por un número diferente de cero da por resultado una nueva ecuación equivalente, si se suma un múltiplo de una ecuación a otra del sistema se obtiene otra ecuación equivalente y por último, si se intercambian dos ecuaciones en un sistema de ecuaciones se obtiene un sistema equivalente. Como se vió anteriormente estas son las operaciones elementales por filas. El proceso de aplicar las operaciones elementales por filas para simplificar una matriz aumentada se llama reducción por filas. 
+
+\begin{tcolorbox}[colback=blue!10!white,colframe=blue!60!black,title=Uso de Reducción de Filas para Resolver un Sistema Lineal]
+    \begin{itemize}
+        \item[2.-] Escriba la matriz aumentada del sistema.
+        \item[1.-] Emplee el algoritmo de reducción por filas para obtener una matriz aumentada equivalente en forma escalonada. Determine si el sistema es consistente o no. Si no existe solución, deténgase; en caso contrario, continúe con el siguiente paso.
+        \item[3.-] Prosiga con la reducción por filas para obtener la forma escalonada reducida.
+        \item[4.-] Escriba el sistema de ecuaciones correspondiente a la matriz obtenida en el paso 3.
+        \item[5.-] Rescriba cada ecuación no nula del paso 4 de manera que su única variable básica se exprese en términos de cualquiera de las variables libres que aparecen en la ecuación. 
+    \end{itemize}
+\end{tcolorbox}
 
 La eliminación de Gauss-Jordan es el proceso de resolución de un sistema de ecuaciones mediante la reducción por renglones de la matriz aumentada a la forma escalonada reducida por renglones.
 
@@ -610,13 +632,13 @@ La eliminación gaussiana es el proceso de resolver un sistema de ecuaciones al 
         \textbf{Eliminación de Gauss Jordan}
     \end{large}
 
-    Se reduce por fila la matriz aumentada a la forma escalonada reducida. Si en algún momento hay un cero en la diagonal principal, se intercambian filas para eliminar el cero de la diagonal principal. \newline
+    Se reduce por fila la matriz aumentada a la forma escalonada reducida. Es decir se realizan los 5 puntos anteriores. \newline
 
     \begin{large}
         \textbf{Eliminación Gaussiana}
     \end{large}
 
-    Se reduce por fila la matriz aumentada a la forma escalonada y después se usa la sustitución hacia atrás.
+    Se reduce por fila la matriz aumentada a la forma escalonada y después se usa la sustitución hacia atrás. Es decir se realizan los primeros 2 puntos anteriores y si el sistema es consistente se prosigue con sustitución hacia atrás.
 \end{tcolorbox}
 
 Al resolver sistemas de ecuaciones en una computadora se prefiere el método de eliminación gaussiana porque significa menos operaciones elementales por filas, aunque a veces es esencial obtener la forma escalonada reducida por renglones de una matriz, en estos casos la eliminación de Gauss-Jordan es el método preferido.
@@ -707,6 +729,8 @@ La matriz aumentada del sistema es:
         \end{array}
     \end{pmatrix}
 \end{equation*}
+
+\pagebreak
 
 Utilizando reducción de Gauss-Jordan
 
