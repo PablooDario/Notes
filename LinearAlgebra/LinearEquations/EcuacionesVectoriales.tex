@@ -75,7 +75,7 @@ Dados dos vectores $u$ y $v$ en $\mathbb{R}^2$, su \textbf{suma} es el vector $u
     \textbf{Multiplicación por un Escalar}
 \end{large}
 
-Considerando un vector \textbf{u} y un número real $c$, el múltipli escalar de \textbf{u} por $c$ es el vector $c$\textbf{u}, que se obtiene al multiplicar por $c$ cada entrada en \textbf{u}. Ejemplo:
+Considerando un vector \textbf{u} y un número real $c$, el múltiplo escalar de \textbf{u} por $c$ es el vector $c$\textbf{u}, que se obtiene al multiplicar por $c$ cada entrada en \textbf{u}. Ejemplo:
 
 \begin{equation*}
     \text{si} \quad u = \begin{bmatrix}
@@ -188,9 +188,13 @@ Los vectores \textbf{u} = $\begin{bmatrix} 2\\2 \end{bmatrix}$, \textbf{v} = $\b
 
 El conjunto de todos los múltiplos escalares de un vector diferente de cero o no nulo, fijo, es una recta que pasa por el origen, (0, 0)
 
-Sea \textbf{u} = $\begin{bmatrix} 3\\-1 \end{bmatrix}$. Representa en el plano \textbf{u}, 2 \textbf{u} y -$\frac{2}{3}$ \textbf{u}.
+\begin{large}
+    \textbf{Ejemplo}
+\end{large}
 
-Así bien, \textbf{u} = $\begin{bmatrix} 3\\-1 \end{bmatrix}$, 2\textbf{u} = $\begin{bmatrix} 6\\-2 \end{bmatrix}$ y $\frac{2}{3}$ \textbf{u} = $\begin{bmatrix} -2\\ \frac{2}{3} \end{bmatrix}$. La flecha para 2\textbf{u} es el doble del largo que la flecha para \textbf{u} y va en el mismo sentido que \textbf{u}. La flecha para - $\frac{2}{3}$\textbf{u} es dos tercios de la longitud de la flecha para \textbf{u} y va en sentido opuesto. En general, la longitud de la flecha para $c\textbf{u}$ es $|c|$ veces la longitud de la flecha para \textbf{u}. 
+Sea \textbf{u} = $\begin{bmatrix} 3\\-1 \end{bmatrix}$. Representa en el plano \textbf{u}, 2\textbf{u} y -$\frac{2}{3}$\textbf{u}.
+
+Así bien, \textbf{u} = $\begin{bmatrix} 3\\-1 \end{bmatrix}$, 2\textbf{u} = $\begin{bmatrix} 6\\-2 \end{bmatrix}$ y $\frac{2}{3}$\textbf{u} = $\begin{bmatrix} -2\\ \frac{2}{3} \end{bmatrix}$. La flecha para 2\textbf{u} es el doble del largo que la flecha para \textbf{u} y va en el mismo sentido que \textbf{u}. La flecha para - $\frac{2}{3}$\textbf{u} es dos tercios de la longitud de la flecha para \textbf{u} y va en sentido opuesto. En general, la longitud de la flecha para $c\textbf{u}$ es $|c|$ veces la longitud de la flecha para \textbf{u}. 
 
 \begin{figure}[ht]
     \centerline{\includegraphics[width=0.3\textwidth]{image9.png}}
@@ -218,7 +222,7 @@ El vector cuyas entradas son todas cero se llama \textbf{vector cero} y se denot
 
 \subsection*{Combinaciones Lineales}
 
-Dados los vectores $v_1,v_2,\dots, v_p$ en $\mathbb{R}^n$ y dados los escalares $c_1,c_2,\dots, c_p$ el vector definido $\mathbf{y}$ definido por:$$\mathbf{y} = c_1v_1 + \dotsb +  c_pv_p$$ se llama \textbf{combinaciòn lineal} de $v_1, \dotsb, v_p$ con pesos $c_1, \dotsb, c_p$. Los pesos en una combinación lineal pueden ser cualesquiera números reales, incluyendo el cero, algunos ejemplos de combinaciones lineales de $v_1$ y $v_2$ son $$\sqrt{3}v_1 + v_2, \quad \frac{1}{2}v_1(= \frac{1}{2}v_1 + 0v_2), \quad 0 (= 0v_1 + 0v_2)$$
+Dados los vectores $v_1,v_2,\dots, v_p$ en $\mathbb{R}^n$ y dados los escalares $c_1,c_2,\dots, c_p$ el vector definido $\mathbf{y}$ es definido por:$$\mathbf{y} = c_1v_1 + \dotsb +  c_pv_p$$ y se llama \textbf{combinaciòn lineal} de $v_1, \dotsb, v_p$ con pesos $c_1, \dotsb, c_p$. Los pesos en una combinación lineal pueden ser cualesquiera números reales, incluyendo el cero, algunos ejemplos de combinaciones lineales de $v_1$ y $v_2$ son $$\sqrt{3}v_1 + v_2, \quad \frac{1}{2}v_1(= \frac{1}{2}v_1 + 0v_2), \quad 0 (= 0v_1 + 0v_2)$$
 
 \begin{figure}[ht]
     \centerline{\includegraphics[width=0.3\textwidth]{image10.png}}
@@ -281,7 +285,7 @@ Los vectores en los miembros izquierdo y derecho de son iguales si y solo si sus
     \end{array}
 \end{equation*}
 
-Ahora tenemos que resolver el sistma para ver si existen valores para $x_1$ y $x_2$ que hagan válido el sistema; para ello reducimos por filas la matriz aumentada como sigue:
+Ahora tenemos que resolver el sistema para ver si existen valores para $x_1$ y $x_2$ que hagan válido dicho sistema; para ello reducimos por filas la matriz aumentada como sigue:
 
 \begin{equation}
     \left[\begin{array}{rr|r}
@@ -322,15 +326,15 @@ Por brevedad se puede escribir la matriz aumentada en una forma que identifique 
 \begin{tcolorbox}[colback=green!20!white,colframe=green!80!black,title=Ecuación Vectorial y Sistema lineal]
     Una ecuación vectorial $$x_1\textbf{$v_1$} + x_2\textbf{$v_2$} + \dotsb + x_n\textbf{$v_n$} = \textbf{$b$}$$ tiene el mismo conjunto solución que el sistema lineal cuya matriz aumentada es $$\begin{bmatrix} \textbf{$v_1$} & \textbf{$v_2$} \dotsb & \textbf{$v_n$} & b \end{bmatrix}$$
 
-    En particular. \textbf{b} se puede generar por una combinación lineal de $v_1, v_2,\dots, v_n$ si y solo si existe una solución al sistema lineal correspondiente a la matriz aumentada anterior.
+    En particular \textbf{b} se puede generar por una combinación lineal de $v_1, v_2,\dots, v_n$ si y solo si existe una solución al sistema lineal correspondiente a la matriz aumentada anterior.
 \end{tcolorbox}
 
 \begin{tcolorbox}[colback=blue!10!white,colframe=blue!60!black,title=Conjunto de Combinaciones Lineales]
-    Si $v_1,v_2,\dots, v_p$ están en $\mathbb{R}^n$, entonces el conjunto de todas las combinaciones lineales de $v_1,v_2,\dots, v_p$ se donta como Gen\{$v_1,v_2,\dots, v_p$\} y se llama \textbf{subconjunto de $\mathbb{R}^n$ extendido o generado por $v_1,v_2,\dots, v_p$}. Es decir Gen\{$v_1,v_2,\dots, v_p$\} es el conjunto de todos los vectores que se pueden escribir en la forma $$c_1v_1 + c_2v_2 + \dots + c_pv_p$$
+    Si $v_1,v_2,\dots, v_p$ están en $\mathbb{R}^n$, entonces el conjunto de todas las combinaciones lineales de $v_1,v_2,\dots, v_p$ se denota como Gen\{$v_1,v_2,\dots, v_p$\} y se llama \textbf{subconjunto de $\mathbb{R}^n$ extendido o generado por $v_1,v_2,\dots, v_p$}. Es decir Gen\{$v_1,v_2,\dots, v_p$\} es el conjunto de todos los vectores que se pueden escribir en la forma $$c_1v_1 + c_2v_2 + \dots + c_pv_p$$
     con escalares $c_1,c_2,\dots, c_p$
 \end{tcolorbox}
 
-Preguntar si un vector \textbf{b} está en Gen\{$v_1,v_2,\dots, v_p$\} equivale a preguntar si la ecuación vectorial $$x_1v_1 + x_2v_2 + \dots + x_pv_p$$ tiene una solución. La cual se puede reescribir como, 
+Preguntar si un vector \textbf{b} está en Gen\{$v_1,v_2,\dots, v_p$\} equivale a preguntar si la ecuación vectorial $$x_1v_1 + x_2v_2 + \dots + x_pv_p = b$$ tiene una solución. La cual se puede reescribir como, 
 
 \begin{equation*}
     x_1 \begin{bmatrix} v_1 \end{bmatrix} 
@@ -341,13 +345,13 @@ Preguntar si un vector \textbf{b} está en Gen\{$v_1,v_2,\dots, v_p$\} equivale 
 
 o de manera equivalente, si el sistema lineal con la matriz aumentada $\begin{bmatrix} v_1 & v_2 & \dotsb & v_p & b \end{bmatrix}$ tiene una solución.
 
-Observe que Gen\{$v_1,v_2,\dots, v_p$\} contiene a cada múltiplo escalar de $v_1$ (por ejemplo), ya que $cv_1 = cv_1 + 0v_2 + \dotsb + 0v_p$. En particular, el vector cero debe estar en Gen\{$v_1,v_2,\dots, v_p$\}.
+Observe que Gen\{$v_1,v_2,\dots, v_p$\} contiene a cada múltiplo escalar de $v_1$ (por ejemplo), ya que $cv_1 = cv_1 + 0v_2 + \dotsb + 0v_p$. Por tanto, el vector cero debe estar en Gen\{$v_1,v_2,\dots, v_p$\}.
 
 \subsection*{Descripción Geométrica de Gen\{v\} y de Gen\{u, v\}}
 
-Sea v un vector diferente de cero en $\mathbb{R}^3$. Entonces Gen\{\textbf{$v$}\} es el conjunto de todos los múltiplos escalares de \textbf{$v$}, que es el conjunto de puntos sobre la recta en en $\mathbb{R}^3$ que pasa por \textbf{$v$} y 0. 
+Sea \textbf{v} un vector diferente de cero en $\mathbb{R}^3$. Entonces Gen\{\textbf{v}\} es el conjunto de todos los múltiplos escalares de \textbf{v}, que es el conjunto de puntos sobre la recta en en $\mathbb{R}^3$ que pasa por \textbf{v} y 0. 
 
-Si \textbf{$u$} y \textbf{$v$} son vectores diferentes de cero en $\mathbb{R}^3$, y \textbf{$v$} no es un múltiplo de \textbf{$u$}, entonces Gen\{\textbf{$u$}, \textbf{$v$}\} es el plano en $\mathbb{R}^3$ que contiene a \textbf{$u$}, \textbf{$v$} y 0. En particular, Gen\{\textbf{$u$}, \textbf{$v$}\} contiene la recta en $\mathbb{R}^3$ que pasa por \textbf{$u$} y 0, y la recta que pasa por \textbf{$v$} y 0.
+Si \textbf{u} y \textbf{v} son vectores diferentes de cero en $\mathbb{R}^3$, y \textbf{v} no es un múltiplo de \textbf{u}, entonces Gen\{\textbf{u},\textbf{v}\} es el plano en $\mathbb{R}^3$ que contiene a \textbf{u}, \textbf{v} y 0. En particular, Gen\{\textbf{u}, \textbf{v}\} contiene la recta en $\mathbb{R}^3$ que pasa por \textbf{u} y 0, y la recta que pasa por \textbf{v} y 0.
 
 \begin{figure}[ht]
     \centerline{\includegraphics[width=0.6\textwidth]{image11.png}}
@@ -359,9 +363,9 @@ Si \textbf{$u$} y \textbf{$v$} son vectores diferentes de cero en $\mathbb{R}^3$
     \textbf{Ejemplo}
 \end{large}
 
-Sean \textbf{$a_1$} = $\begin{bmatrix} 1\\-2\\3 \end{bmatrix}$, \textbf{$a_2$} = $\begin{bmatrix} 5\\-13\\-3 \end{bmatrix}$ y \textbf{$b$} = $\begin{bmatrix} -3\\8\\1 \end{bmatrix}$. Entonces  Gen\{\textbf{$a_1$}, \textbf{$a_2$}\} es un plano que pasa por el origen en $\mathbb{R}^3$. ¿Está \textbf{b} en ese plano?
+Sean $\mathbf{a_1}$ = $\begin{bmatrix} 1\\-2\\3 \end{bmatrix}$, $\mathbf{a_2}$ = $\begin{bmatrix} 5\\-13\\-3 \end{bmatrix}$ y $\mathbf{b} = \begin{bmatrix} -3\\8\\1 \end{bmatrix}$. Entonces  Gen\{$\mathbf{a_1}$, $\mathbf{a_2}$\} es un plano que pasa por el origen en $\mathbb{R}^3$. ¿Está \textbf{b} en ese plano?
 
-Para responder esto debemos ver si \textbf{$b$} es una combinación lineal de \textbf{$a_1$} y \textbf{$a_2$}; es decir ¿Tiene solución la ecuación $x_1$\textbf{$a_1$} + $x_2$\textbf{$a_2$} = \textbf{$b$}? Así bein debemos reducir por la filas la ,atriz aumentada $\begin{bmatrix} a_1 & a_2 & a_3 \end{bmatrix}$
+Para responder esto debemos ver si \textbf{b} es una combinación lineal de $\mathbf{a_1}$ y $\mathbf{a_2}$; es decir ¿Tiene solución la ecuación $x_1\mathbf{a_1} + x_2\mathbf{a_2} = \mathbf{b}$? Así bien debemos reducir por la filas la matriz aumentada $\begin{bmatrix} \mathbf{a_1} & \mathbf{a_2} & \mathbf{b} \end{bmatrix}$
 
 \begin{equation*}
     \left[\begin{array}{rrr}
@@ -379,7 +383,7 @@ Para responder esto debemos ver si \textbf{$b$} es una combinación lineal de \t
     \end{array}\right]
 \end{equation*}
 
-Por lo tanto, vemos que el sistema es inconsistente, debido a que la tercera ecuación es  0 = -2. La ecuación vectorial $x_1$\textbf{$a_1$} + $x_2$\textbf{$a_2$} = \textbf{$b$} no tiene solución, de manera que \textbf{$b$} no está en Gen\{\textbf{$a_1$}, \textbf{$a_2$}\}.\cite{DavidC}
+Por lo tanto, vemos que el sistema es inconsistente, debido a que la tercera ecuación es  0 = -2. La ecuación vectorial $x_1\mathbf{a_1} + x_2\mathbf{a_2} = \mathbf{b}$ no tiene solución, de manera que $\mathbf{b}$ no está en Gen\{$\mathbf{a_1}$, $\mathbf{a_2}$\}. \cite{DavidC}
 
 \pagebreak
 \bibliography{Referencias}
