@@ -222,7 +222,7 @@ El vector cuyas entradas son todas cero se llama \textbf{vector cero} y se denot
 
 \subsection*{Combinaciones Lineales}
 
-Dados los vectores $v_1,v_2,\dots, v_p$ en $\mathbb{R}^n$ y dados los escalares $c_1,c_2,\dots, c_p$ el vector definido $\mathbf{y}$ es definido por:$$\mathbf{y} = c_1v_1 + \dotsb +  c_pv_p$$ y se llama \textbf{combinaciòn lineal} de $v_1, \dotsb, v_p$ con pesos $c_1, \dotsb, c_p$. Los pesos en una combinación lineal pueden ser cualesquiera números reales, incluyendo el cero, algunos ejemplos de combinaciones lineales de $v_1$ y $v_2$ son $$\sqrt{3}v_1 + v_2, \quad \frac{1}{2}v_1(= \frac{1}{2}v_1 + 0v_2), \quad 0 (= 0v_1 + 0v_2)$$
+Dados los vectores $v_1,v_2,\dots, v_p$ en $\mathbb{R}^n$ y dados los escalares $c_1,c_2,\dots, c_p$ el vector $\mathbf{y}$ es definido por:$$\mathbf{y} = c_1v_1 + \dotsb +  c_pv_p$$ y se llama \textbf{combinaciòn lineal} de $v_1, \dotsb, v_p$ con pesos $c_1, \dotsb, c_p$. Los pesos en una combinación lineal pueden ser cualesquiera números reales, incluyendo el cero, algunos ejemplos de combinaciones lineales de $v_1$ y $v_2$ son $$\sqrt{3}v_1 + v_2, \quad \frac{1}{2}v_1(= \frac{1}{2}v_1 + 0v_2), \quad 0 (= 0v_1 + 0v_2)$$
 
 \begin{figure}[ht]
     \centerline{\includegraphics[width=0.3\textwidth]{image10.png}}
@@ -368,22 +368,22 @@ Sean $\mathbf{a_1}$ = $\begin{bmatrix} 1\\-2\\3 \end{bmatrix}$, $\mathbf{a_2}$ =
 Para responder esto debemos ver si \textbf{b} es una combinación lineal de $\mathbf{a_1}$ y $\mathbf{a_2}$; es decir ¿Tiene solución la ecuación $x_1\mathbf{a_1} + x_2\mathbf{a_2} = \mathbf{b}$? Así bien debemos reducir por la filas la matriz aumentada $\begin{bmatrix} \mathbf{a_1} & \mathbf{a_2} & \mathbf{b} \end{bmatrix}$
 
 \begin{equation*}
-    \left[\begin{array}{rrr}
+    \left[\begin{array}{rr|r}
     1 & 5 & -3 \\
     -2 & -13 & 8 \\
     3 & -3 & 1
-    \end{array}\right] \sim\left[\begin{array}{rrr}
+    \end{array}\right] \sim\left[\begin{array}{rr|r}
     1 & 5 & -3 \\
     0 & -3 & 2 \\
     0 & -18 & 10
-    \end{array}\right] \sim\left[\begin{array}{rrr}
+    \end{array}\right] \sim\left[\begin{array}{rr|r}
     1 & 5 & -3 \\
     0 & -3 & 2 \\
     0 & 0 & -2
     \end{array}\right]
 \end{equation*}
 
-Por lo tanto, vemos que el sistema es inconsistente, debido a que la tercera ecuación es  0 = -2. La ecuación vectorial $x_1\mathbf{a_1} + x_2\mathbf{a_2} = \mathbf{b}$ no tiene solución, de manera que $\mathbf{b}$ no está en Gen\{$\mathbf{a_1}$, $\mathbf{a_2}$\}. \cite{DavidC}
+Por lo tanto, vemos que el sistema es inconsistente, debido a que la tercera ecuación es  0 = -2. La ecuación vectorial $x_1\mathbf{a_1} + x_2\mathbf{a_2} = \mathbf{b}$ no tiene solución, de manera que $\mathbf{b}$ no está en Gen\{$\mathbf{a_1}$, $\mathbf{a_2}$\} o bien, $\mathbf{b}$ no es una combinación lineal de $\mathbf{a_1}$ y $\mathbf{a_2}$. \cite{DavidC}
 
 \pagebreak
 \bibliography{Referencias}
