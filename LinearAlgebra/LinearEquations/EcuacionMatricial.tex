@@ -1,0 +1,190 @@
+\documentclass{article}
+\usepackage[top=1cm, left=1.5cm, right=1.5cm, bottom=1.5cm]{geometry}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\graphicspath{{./img/}}
+\usepackage{amsmath}
+\usepackage{tcolorbox}
+\usepackage{tikz-cd}
+\usepackage{apacite}
+\bibliographystyle{apacite}
+\usepackage{amssymb}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1em} 
+ 
+\title{Ecuación Matricial $Ax = b$}
+\author{Pablo Darío}
+\date{18/12/2023}
+ 
+\begin{document}
+\maketitle
+
+Una idea fundamental en álgebra lineal consiste en ver una combinación lineal de vectores como el producto de una matriz y un vector. 
+
+\begin{tcolorbox}[colback=blue!10!white,colframe=blue!60!black,title=Producto de una matriz y un vector]
+    Si $A$ es una matriz de $m \times n$, con columnas $\mathbf{a_1},\mathbf{a_2},\dots, \mathbf{a_n}$ y si $x$ está en $\mathbb{R}^n$, entonces el producto de $A$ y $x$, denotado como $A\mathbf{x}$, es la combinación lineal de las columnas de $A$ utilizando como pesos las entradas correspondientes en $x$, es decir, $$A\mathbf{x} = \begin{bmatrix}
+    \mathbf{a_1},\mathbf{a_2},\dots, \mathbf{a_n} \end{bmatrix} \begin{bmatrix}x_1\\ x_2\\ \vdots \\x_n \end{bmatrix} = x_1\mathbf{a_1} + x_2\mathbf{a_2} + \dotsb + x_n\mathbf{a_n}$$
+\end{tcolorbox}
+
+$A\mathbf{x}$ está solamente definido si el número de columnas de $A$ es igual al número de entradas en $\mathbf{x}$.
+ 
+\begin{large}
+    \textbf{Ejemplo}
+\end{large}
+
+\begin{equation*}
+    \begin{bmatrix}
+        1 & 2 & -1\\
+        0 & -5 & 3
+    \end{bmatrix}
+    \begin{bmatrix} 4\\3\\7 \end{bmatrix}
+    = 4 \begin{bmatrix} 1\\0 \end{bmatrix}
+    + 3 \begin{bmatrix} 2\\-5 \end{bmatrix}
+    + 7 \begin{bmatrix} -1\\3 \end{bmatrix}
+    = \begin{bmatrix} 3\\6 \end{bmatrix} 
+\end{equation*}
+
+\begin{large}
+    \textbf{Ejemplo 2}
+\end{large}
+
+Para $\mathbf{v_1}, \mathbf{v_2}, \mathbf{v_3}$ en $\mathbb{R}^n$ , escriba la combinación lineal de $3\mathbf{v_1} - 5\mathbf{v_2} + 7\mathbf{v_3}$ como una matriz por un vector.
+
+Coloque $\mathbf{v_1}, \mathbf{v_2}, \mathbf{v_3}$ en las columnas de una matriz $A$ y coloque los pesos en un vector $\mathbf{x}$.
+
+\begin{equation*}
+    3\mathbf{v_1} - 5\mathbf{v_2} + 7\mathbf{v_3} = \begin{bmatrix}
+        \mathbf{v_1} & \mathbf{v_2} & \mathbf{v_3}
+    \end{bmatrix}
+    \begin{bmatrix}
+        3 \\-5\\7
+    \end{bmatrix}
+    = A\mathbf{x}
+\end{equation*}
+
+\begin{large}
+    \textbf{Ejemplo 3}
+\end{large}
+
+Convierta el siguiente sistema de ecuaciones lineales en como una ecuación vectorial que implica una combinación lineal de vectores y después en la forma de matriz por un vector.
+
+\begin{equation*}
+    \begin{aligned}
+        x_1 &+ 2x_2 &- x_3 &= 4\\
+            &-5x_2  &+3x_3 &= 1
+    \end{aligned}
+\end{equation*}
+
+Ecuación Vectorial
+
+\begin{equation*}
+    x_1\begin{bmatrix} 1\\0 \end{bmatrix} 
+    +x_2\begin{bmatrix} 2\\-5 \end{bmatrix}
+    +x_3\begin{bmatrix} 1\\3 \end{bmatrix}
+    =\begin{bmatrix} 4\\1 \end{bmatrix}
+\end{equation*}
+
+Matriz por vector
+
+\begin{equation*}
+    \begin{bmatrix}
+        1 & 2 & -1\\
+        0 & -5 & 3
+    \end{bmatrix}
+    \begin{bmatrix} x_1\\x_2\\x_3 \end{bmatrix}
+    =\begin{bmatrix} 4\\1 \end{bmatrix}
+\end{equation*}
+
+La última ecuación se llama \textbf{Ecuación Matricial} para distinguirla de una ecuación vectorial. Donde la matriz es la matriz de coeficientes del sistema de ecuaciones lineales. 
+
+Cualquier sistema de ecuaciones lineales o cualquier ecuación vectorial se puede escribir como una ecuación matricial equivalente en la forma $A\mathbf{x} = \mathbf{b}$
+
+\begin{tcolorbox}[colback=blue!10!white,colframe=blue!60!black,title=Ecuación Matricial]
+    Si $A$ es una matriz de $m \times n$, con columnas $\mathbf{a_1},\mathbf{a_2},\dots, \mathbf{a_n}$ y si $\mathbf{b}$ está en $\mathbb{R}^n$, la ecuación matricial $$A\mathbf{x} = \mathbf{b}$$ tiene el mismo conjunto solución que la ecuación vectorial $$x_1\mathbf{a_1} + x_2\mathbf{a_2} + \dotsb + x_n\mathbf{a_n} = \mathbf{b}$$ la cual, a la vez tiene el mismo conjunto solución que el sistema de ecuaciones lineales cuya matriz aumentada es $$\begin{bmatrix}\mathbf{a_1}&\mathbf{a_2}& \dotsb & \mathbf{a_n} & \mathbf{b}\end{bmatrix}$$
+\end{tcolorbox}
+
+El teorema anterior constituye una poderosa herramienta para comprender problemas de álgebra lineal, porque ahora un sistema de ecuaciones lineales puede verse en tres formas diferentes, pero equivalentes: como una ecuación matricial, como una ecuación vectorial o como un sistema de ecuaciones lineales. Siempre que usted construya un modelo matemático de un problema de la vida real, tendrá libertad para elegir qué punto de vista es más natural. Además, será posible pasar de una formulación del problema a otra, según sea conveniente. En cualquier caso, la ecuación matricial, la ecuación vectorial y el sistema de ecuaciones se resuelven de la misma manera: por reducción de filas de la matriz aumentada. 
+
+\subsection*{Existencia de Soluciones}
+
+\begin{tcolorbox}[colback=blue!10!white,colframe=blue!60!black,title=Solución de Ecuación Matricial]
+    La ecuación $A\mathbf{x} = \mathbf{b}$ tiene solución si y solo si $\mathbf{b}$ es una combinación lineal de las columas de $A$.
+\end{tcolorbox}
+
+Un problema de existencia más difícil consiste en determinar si la ecuación $A\mathbf{x} = \mathbf{b}$ es consistente para toda $\mathbf{b}$ posible.
+
+\begin{large}
+    \textbf{Ejemplo}
+\end{large}
+
+Sean $A=\begin{bmatrix}
+    1&3&4\\
+    -4&2&-6\\
+    -3&-2&-7
+\end{bmatrix} 
+\text{y} \quad \mathbf{b}=\begin{bmatrix} b_1\\b_2\\b_3 \end{bmatrix}$.¿La ecuación $A\mathbf{x} = \mathbf{b}$ es consistente para todas las posibles $b_1, b_2, b_3$?
+
+Se reduce por filas la matriz aumentada para $A\mathbf{x} = \mathbf{b}$:
+
+%Hacer con MathPix
+
+La matriz reducida da una descripción de todas las $\mathbf{b}$ para las cuales las ecuación $A\mathbf{x} = \mathbf{b}$ es consistente, es decir las entradas en $\mathbf{b}$ deben satisfacer $$b_1 - \frac{1}{2}b_2 + b_3 = 0$$
+
+La frase “las columnas de $A$ generan a $\mathbb{R}^m$” significa que cada $\mathbf{b}$ en $\mathbb{R}^m$ es una combinación lineal de las columnas de $A$. En general, un conjunto de vectores $\{\mathbf{v_1}, \mathbf{v_2},..., \mathbf{v_n}\}$ en $\mathbb{R}^m$ genera a $\mathbb{R}^m$ si cada vector en $\mathbb{R}^m$ es una combinación lineal de $\mathbf{v_1}, \mathbf{v_2},..., \mathbf{v_n}$; es decir, si Gen$\{\mathbf{v_1}, \mathbf{v_2},..., \mathbf{v_n}\}$ $\mathbb{R}^m$.
+
+\begin{tcolorbox}[colback=red!10!white, colframe=red!70!black, title=Las columnas de $A$ generan $\mathbb{R}^m$]
+    Sea A una matriz de coeficientes de $m \times n$. Entonces, los siguientes enunciados son lógicamente equivalentes. Es decir, para una $A$ particular, todos los enunciados son verdaderos o todos son falsos.
+    \begin{itemize}
+        \item[a.-] Para cada b en $\mathbb{R}^m$, la ecuación $A\mathbf{x} = \mathbf{b}$ tiene una solución.
+        \item[b.-] Cada $\mathbf{b}$ en $\mathbb{R}^m$ es una combinación lineal de las columnas de $A$.
+        \item[c.-] Las columnas de A generan $\mathbb{R}^m$. 
+        \item[d.-] $A$ tiene una posición pivote en cada fila 
+    \end{itemize}
+\end{tcolorbox}
+
+\subsection*{Cálculo de $A\mathbf{x}$}
+
+\begin{tcolorbox}[colback=green!20!white,colframe=green!80!black,title=Regla Fila-Vector para calcular $A\mathbf{x}$]
+    Si el producto $A\mathbf{x}$ está definido, entoces la $i$-ésima entrada en $A\mathbf{x}$ es la suma de los productos de las entradas correspondientes de la fila $i$ de $A$ del vector $\mathbf{x}$.
+\end{tcolorbox}
+
+\begin{large}
+    \textbf{Ejemplo}
+\end{large}
+
+$\begin{bmatrix}
+    1 & 2 & -1\\
+    0 & -5 & 3
+\end{bmatrix}
+\begin{bmatrix} 4\\3\\7 \end{bmatrix}
+=\begin{bmatrix}
+    1*4 + 2*3 + (-1)*7\\
+    0*4 + (-5)*3 + 3*7 
+\end{bmatrix}
+\begin{bmatrix} 3\\6 \end{bmatrix}$
+
+$\begin{bmatrix}
+    1 & 0 & 0\\
+    0 & 1 & 0\\
+    0 & 0 & 1
+\end{bmatrix}
+\begin{bmatrix} r\\s\\t \end{bmatrix}
+=\begin{bmatrix}
+    1*r + 0*s + 0*t\\
+    0*r + 1*s + 0*t\\
+    0*r + 0*s + 1*t
+\end{bmatrix}
+\begin{bmatrix} r\\s\\t \end{bmatrix}$
+
+La matriz del último ejemplo con números 1 en la diagonal y ceros en las demás posiciones se llama \textbf{matriz identidad} y se denota con $I$. Los cálculos en esta indican que $I\mathbf{x} =  \mathbf{x}$ para toda $\mathbf{x}$ en $\mathbb{R}^3$. Existe una matriz ánaloga de $n \times n$, algunas veces denotada como $I_n$, la cual $I_n\mathbf{x} = \mathbf{x}$ para toda $\mathbf{x}$ en $\mathbb{R}^n$.
+
+\begin{tcolorbox}[colback=red!10!white, colframe=red!70!black, title=Propiedades del producto matriz-vector $A\mathbf{x}$]
+    Si $A$ es una matriz de $m\times n, \mathbf{u} \text{y} \mathbf{v}$ son vectores en $\mathbb{R}^n$ y $c$ es un escalar, entonces: 
+    \begin{itemize}
+        \item[a.-]  $A(\mathbf{u} + \mathbf{v}) = A\mathbf{u} + A\mathbf{v}$
+        \item[b.-] $A(c\mathbf{u}) = c(A\mathbf{u})$ 
+    \end{itemize}
+
+\end{tcolorbox}
+
+\end{document}
