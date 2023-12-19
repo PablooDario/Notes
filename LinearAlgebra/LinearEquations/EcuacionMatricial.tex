@@ -48,7 +48,7 @@ $A\mathbf{x}$ está solamente definido si el número de columnas de $A$ es igual
     \textbf{Ejemplo 2}
 \end{large}
 
-Para $\mathbf{v_1}, \mathbf{v_2}, \mathbf{v_3}$ en $\mathbb{R}^n$ , escriba la combinación lineal de $3\mathbf{v_1} - 5\mathbf{v_2} + 7\mathbf{v_3}$ como una matriz por un vector.
+Para $\mathbf{v_1}, \mathbf{v_2}, \mathbf{v_3}$ en $\mathbb{R}^n$, escriba la combinación lineal de $3\mathbf{v_1} - 5\mathbf{v_2} + 7\mathbf{v_3}$ como una matriz por un vector.
 
 Coloque $\mathbf{v_1}, \mathbf{v_2}, \mathbf{v_3}$ en las columnas de una matriz $A$ y coloque los pesos en un vector $\mathbf{x}$.
 
@@ -126,16 +126,33 @@ Sean $A=\begin{bmatrix}
 
 Se reduce por filas la matriz aumentada para $A\mathbf{x} = \mathbf{b}$:
 
-%Hacer con MathPix
+\begin{equation*}
+    \begin{aligned}
+    {\left[\begin{array}{rrrr}
+    1 & 3 & 4 & b_1 \\
+    -4 & 2 & -6 & b_2 \\
+    -3 & -2 & -7 & b_3
+    \end{array}\right] } & \sim\left[\begin{array}{rrrc}
+    1 & 3 & 4 & b_1 \\
+    0 & 14 & 10 & b_2+4 b_1 \\
+    0 & 7 & 5 & b_3+3 b_1
+    \end{array}\right] \\
+    & \sim\left[\begin{array}{rrrc}
+    1 & 3 & 4 & b_1 \\
+    0 & 14 & 10 & b_2+4 b_1 \\
+    0 & 0 & 0 & b_3+3 b_1-\frac{1}{2}\left(b_2+4 b_1\right)
+    \end{array}\right]
+    \end{aligned}
+\end{equation*}
 
 La matriz reducida da una descripción de todas las $\mathbf{b}$ para las cuales las ecuación $A\mathbf{x} = \mathbf{b}$ es consistente, es decir las entradas en $\mathbf{b}$ deben satisfacer $$b_1 - \frac{1}{2}b_2 + b_3 = 0$$
 
-La frase “las columnas de $A$ generan a $\mathbb{R}^m$” significa que cada $\mathbf{b}$ en $\mathbb{R}^m$ es una combinación lineal de las columnas de $A$. En general, un conjunto de vectores $\{\mathbf{v_1}, \mathbf{v_2},..., \mathbf{v_n}\}$ en $\mathbb{R}^m$ genera a $\mathbb{R}^m$ si cada vector en $\mathbb{R}^m$ es una combinación lineal de $\mathbf{v_1}, \mathbf{v_2},..., \mathbf{v_n}$; es decir, si Gen$\{\mathbf{v_1}, \mathbf{v_2},..., \mathbf{v_n}\}$ $\mathbb{R}^m$.
+La frase “las columnas de $A$ generan a $\mathbb{R}^m$” significa que cada $\mathbf{b}$ en $\mathbb{R}^m$ es una combinación lineal de las columnas de $A$. En general, un conjunto de vectores $\{\mathbf{v_1}, \mathbf{v_2},..., \mathbf{v_n}\}$ en $\mathbb{R}^m$ genera a $\mathbb{R}^m$ si cada vector en $\mathbb{R}^m$ es una combinación lineal de $\mathbf{v_1}, \mathbf{v_2},..., \mathbf{v_n}$; es decir, si Gen$\{\mathbf{v_1}, \mathbf{v_2},..., \mathbf{v_n}\} = \mathbb{R}^m$.
 
 \begin{tcolorbox}[colback=red!10!white, colframe=red!70!black, title=Las columnas de $A$ generan $\mathbb{R}^m$]
     Sea A una matriz de coeficientes de $m \times n$. Entonces, los siguientes enunciados son lógicamente equivalentes. Es decir, para una $A$ particular, todos los enunciados son verdaderos o todos son falsos.
     \begin{itemize}
-        \item[a.-] Para cada b en $\mathbb{R}^m$, la ecuación $A\mathbf{x} = \mathbf{b}$ tiene una solución.
+        \item[a.-] Para cada $\mathbf{b}$ en $\mathbb{R}^m$, la ecuación $A\mathbf{x} = \mathbf{b}$ tiene una solución.
         \item[b.-] Cada $\mathbf{b}$ en $\mathbb{R}^m$ es una combinación lineal de las columnas de $A$.
         \item[c.-] Las columnas de A generan $\mathbb{R}^m$. 
         \item[d.-] $A$ tiene una posición pivote en cada fila 
@@ -145,7 +162,7 @@ La frase “las columnas de $A$ generan a $\mathbb{R}^m$” significa que cada $
 \subsection*{Cálculo de $A\mathbf{x}$}
 
 \begin{tcolorbox}[colback=green!20!white,colframe=green!80!black,title=Regla Fila-Vector para calcular $A\mathbf{x}$]
-    Si el producto $A\mathbf{x}$ está definido, entoces la $i$-ésima entrada en $A\mathbf{x}$ es la suma de los productos de las entradas correspondientes de la fila $i$ de $A$ del vector $\mathbf{x}$.
+    Si el producto $A\mathbf{x}$ está definido, entoces la $i$-ésima entrada en $A\mathbf{x}$ es la suma de los productos de las entradas correspondientes de la fila $i$ de $A$ y del vector $\mathbf{x}$.
 \end{tcolorbox}
 
 \begin{large}
@@ -158,8 +175,8 @@ $\begin{bmatrix}
 \end{bmatrix}
 \begin{bmatrix} 4\\3\\7 \end{bmatrix}
 =\begin{bmatrix}
-    1*4 + 2*3 + (-1)*7\\
-    0*4 + (-5)*3 + 3*7 
+    1\cdot4 + 2\cdot3 + (-1)\cdot7\\
+    0\cdot4 + (-5)\cdot3 + 3\cdot7 
 \end{bmatrix}
 \begin{bmatrix} 3\\6 \end{bmatrix}$
 
@@ -170,16 +187,16 @@ $\begin{bmatrix}
 \end{bmatrix}
 \begin{bmatrix} r\\s\\t \end{bmatrix}
 =\begin{bmatrix}
-    1*r + 0*s + 0*t\\
-    0*r + 1*s + 0*t\\
-    0*r + 0*s + 1*t
+    1\cdot r + 0\cdot s + 0\cdot t\\
+    0\cdot r + 1\cdot s + 0\cdot t\\
+    0\cdot r + 0\cdot s + 1\cdot t
 \end{bmatrix}
 \begin{bmatrix} r\\s\\t \end{bmatrix}$
 
 La matriz del último ejemplo con números 1 en la diagonal y ceros en las demás posiciones se llama \textbf{matriz identidad} y se denota con $I$. Los cálculos en esta indican que $I\mathbf{x} =  \mathbf{x}$ para toda $\mathbf{x}$ en $\mathbb{R}^3$. Existe una matriz ánaloga de $n \times n$, algunas veces denotada como $I_n$, la cual $I_n\mathbf{x} = \mathbf{x}$ para toda $\mathbf{x}$ en $\mathbb{R}^n$.
 
 \begin{tcolorbox}[colback=red!10!white, colframe=red!70!black, title=Propiedades del producto matriz-vector $A\mathbf{x}$]
-    Si $A$ es una matriz de $m\times n, \mathbf{u} \text{y} \mathbf{v}$ son vectores en $\mathbb{R}^n$ y $c$ es un escalar, entonces: 
+    Si $A$ es una matriz de $m\times n, \mathbf{u} \text{ y } \mathbf{v}$ son vectores en $\mathbb{R}^n$ y $c$ es un escalar, entonces: 
     \begin{itemize}
         \item[a.-]  $A(\mathbf{u} + \mathbf{v}) = A\mathbf{u} + A\mathbf{v}$
         \item[b.-] $A(c\mathbf{u}) = c(A\mathbf{u})$ 
