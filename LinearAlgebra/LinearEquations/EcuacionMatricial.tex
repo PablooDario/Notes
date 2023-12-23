@@ -147,6 +147,8 @@ Se reduce por filas la matriz aumentada para $A\mathbf{x} = \mathbf{b}$:
 
 La matriz reducida da una descripción de todas las $\mathbf{b}$ para las cuales las ecuación $A\mathbf{x} = \mathbf{b}$ es consistente, es decir las entradas en $\mathbf{b}$ deben satisfacer $$b_1 - \frac{1}{2}b_2 + b_3 = 0$$
 
+Por lo que la ecuación $A\mathbf{x} = \mathbf{b}$ no es consistente para toda $\mathbf{b}$ porque algunas asignaciones de $\mathbf{b}$ pueden hacer que $b_1 - \frac{1}{2}b_2 + b_3$ sea diferente de cero. 
+
 La frase “las columnas de $A$ generan a $\mathbb{R}^m$” significa que cada $\mathbf{b}$ en $\mathbb{R}^m$ es una combinación lineal de las columnas de $A$. En general, un conjunto de vectores $\{\mathbf{v_1}, \mathbf{v_2},..., \mathbf{v_n}\}$ en $\mathbb{R}^m$ genera a $\mathbb{R}^m$ si cada vector en $\mathbb{R}^m$ es una combinación lineal de $\mathbf{v_1}, \mathbf{v_2},..., \mathbf{v_n}$; es decir, si Gen$\{\mathbf{v_1}, \mathbf{v_2},..., \mathbf{v_n}\} = \mathbb{R}^m$.
 
 \begin{tcolorbox}[colback=red!10!white, colframe=red!70!black, title=Las columnas de $A$ generan $\mathbb{R}^m$]
@@ -178,7 +180,7 @@ $\begin{bmatrix}
     1\cdot4 + 2\cdot3 + (-1)\cdot7\\
     0\cdot4 + (-5)\cdot3 + 3\cdot7 
 \end{bmatrix}
-\begin{bmatrix} 3\\6 \end{bmatrix}$
+= \begin{bmatrix} 3\\6 \end{bmatrix}$
 
 $\begin{bmatrix}
     1 & 0 & 0\\
@@ -191,7 +193,7 @@ $\begin{bmatrix}
     0\cdot r + 1\cdot s + 0\cdot t\\
     0\cdot r + 0\cdot s + 1\cdot t
 \end{bmatrix}
-\begin{bmatrix} r\\s\\t \end{bmatrix}$
+= \begin{bmatrix} r\\s\\t \end{bmatrix}$
 
 La matriz del último ejemplo con números 1 en la diagonal y ceros en las demás posiciones se llama \textbf{matriz identidad} y se denota con $I$. Los cálculos en esta indican que $I\mathbf{x} =  \mathbf{x}$ para toda $\mathbf{x}$ en $\mathbb{R}^3$. Existe una matriz ánaloga de $n \times n$, algunas veces denotada como $I_n$, la cual $I_n\mathbf{x} = \mathbf{x}$ para toda $\mathbf{x}$ en $\mathbb{R}^n$.
 
