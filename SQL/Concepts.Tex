@@ -1,0 +1,71 @@
+\documentclass{article}
+\usepackage[top=1cm, left=1.5cm, right=1.5cm, bottom=1.5cm]{geometry}
+\usepackage{graphicx, amsmath, tikz-cd, apacite, amssymb, tcolorbox, wrapfig}
+\graphicspath{{./img/}}
+\bibliographystyle{apacite}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1em} 
+ 
+\title{Concepts}
+\author{Pablo Dario}
+\date{05/01/2024}
+ 
+\begin{document}
+\maketitle
+\section{Data and DataBases}
+
+\subsection{Data}
+
+\textbf{Data must be related to a context to be useful.} 
+\begin{itemize}
+    \item[-] Information about something in particular that allows its exact knowledge or serves to deduce the consequences of its use.
+    \item[-] Information arranged in a form suitable for computer processing.
+    \item[-] Collection of facts in the from of words, numbers, etc...
+\end{itemize}
+ 
+\subsection{DataBases}
+
+\textbf{Collection of related data, organized in a structured format that is defined by metadata that describes that structure} Characteristics:
+
+\begin{itemize}
+    \item[-] Represents a real world aspect
+    \item[-] Has a meaning
+    \item[-] Has a purpose
+    \item[-] It is aimed to a certain group of users
+\end{itemize}
+
+\subsection{Relational DataBases}
+
+Set of software tools that allows users to control the data, some of the tasks it performs are:
+\begin{itemize}
+    \item[-] \textbf{Define.} Especify the datatype, structure and constraints.
+    \item[-] \textbf{Create.} Save the data on some storage media.
+    \item[-] \textbf{Manipulate.} Query, update and generate reports.
+\end{itemize}
+
+\pagebreak
+
+\subsection{Data Independence}
+
+In a hierarchical database, the application relies on a defined implementation of that database, which is then hard-coded into the application. If you add a new attribute to the database, you must modify the application, even if it does not use the attribute. However, a relational database is independent of the application;  you can make non-destructive modifications to the structure without impacting the application. In addition, the structure of the relational database is based on the relation, or table, along with the ability to define complex relationships between these relations. Each relation can be accessed directly, without the cumbersome limitations of a hierarchical or owner/member model that requires navigation of a complex data structure. 
+
+\section{Constraints}
+
+SQL constraints are used to specify rules for the data in a table.
+
+Constraints are used to limit the type of data that can go into a table. This ensures the accuracy and reliability of the data in the table. If there is any violation between the constraint and the data action, the action is aborted.
+
+Constraints can be column level or table level. Column level constraints apply to a column, and table level constraints apply to the whole table.
+
+The following constraints are commonly used in SQL:
+\begin{itemize}
+    \item[-] \textbf{NOT NULL:} Ensures that a column cannot have a NULL value.
+    \item[-] \textbf{UNIQUE:} Ensures that all values in a column are different.
+    \item[-] \textbf{PRIMARY KEY:} A combination of a NOT NULL and UNIQUE. Uniquely identifies each row in a table.
+    \item[-] \textbf{FOREIGN KEY:} Prevents actions that would destroy links between tables.
+    \item[-] \textbf{CHECK:} Ensures that the values in a column satisfies a specific condition.
+    \item[-] \textbf{DEFAULT:} Sets a default value for a column if no value is specified.
+    \item[-] \textbf{CREATE INDEX:} Used to create and retrieve data from the database very quickly
+\end{itemize}
+ 
+\end{document}
