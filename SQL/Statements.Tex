@@ -164,18 +164,18 @@ ALTER TABLE statements used to add or remove columns from a table, to modify the
 \end{large}
 
 \begin{sqlcode}
-    ALTER TABLE table_name
-    ALTER COLUMN column_name datatype;
+    ALTER TABLE <table_name> 
+    MODIFY <column_name> data_type;
 \end{sqlcode}
 
 \begin{sqlcode}
     ALTER TABLE Customers
-    ALTER COLUMN Email varchar(50);
+    MODIFY Email varchar(50);
 \end{sqlcode}
 
 \begin{sqlcode}
     ALTER TABLE Customers
-    ALTER COLUMN Country ADD DEFAULT USA; 
+    ALTER COLUMN Country SET DEFAULT USA; 
 \end{sqlcode}
 
 \subsection{DROP and TRUNCATE TABLE}
