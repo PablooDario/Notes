@@ -66,7 +66,7 @@ Coloque $\mathbf{v_1}, \mathbf{v_2}, \mathbf{v_3}$ en las columnas de una matriz
     \textbf{Ejemplo 3}
 \end{large}
 
-Convierta el siguiente sistema de ecuaciones lineales en como una ecuación vectorial que implica una combinación lineal de vectores y después en la forma de matriz por un vector.
+Convierta el siguiente sistema de ecuaciones lineales en una ecuación vectorial que implica una combinación lineal de vectores y después en la forma de matriz por un vector.
 
 \begin{equation*}
     \begin{aligned}
@@ -195,15 +195,28 @@ $\begin{bmatrix}
 \end{bmatrix}
 = \begin{bmatrix} r\\s\\t \end{bmatrix}$
 
-La matriz del último ejemplo con números 1 en la diagonal y ceros en las demás posiciones se llama \textbf{matriz identidad} y se denota con $I$. Los cálculos en esta indican que $I\mathbf{x} =  \mathbf{x}$ para toda $\mathbf{x}$ en $\mathbb{R}^3$. Existe una matriz ánaloga de $n \times n$, algunas veces denotada como $I_n$, la cual $I_n\mathbf{x} = \mathbf{x}$ para toda $\mathbf{x}$ en $\mathbb{R}^n$.
+La matriz del último ejemplo con números 1 en la diagonal y ceros en las demás posiciones se llama \textbf{matriz identidad} y se denota con $I$. Los cálculos en esta indican que $I\mathbf{x} =  \mathbf{x}$ para toda $\mathbf{x}$ en $\mathbb{R}^3$. Existe una matriz ánaloga de $n \times n$, algunas veces denotada como $I_n$, la cual $I_n\mathbf{x} = \mathbf{x}$ para toda $\mathbf{x}$ en $\mathbb{R}^n$. \cite{DavidC}
 
-\begin{tcolorbox}[colback=red!10!white, colframe=red!70!black, title=Propiedades del producto matriz-vector $A\mathbf{x}$]
+\begin{tcolorbox}[colback=blue!10!white,colframe=blue!60!black,title=Propiedades del producto matriz-vector $A\mathbf{x}$]
     Si $A$ es una matriz de $m\times n, \mathbf{u} \text{ y } \mathbf{v}$ son vectores en $\mathbb{R}^n$ y $c$ es un escalar, entonces: 
     \begin{itemize}
         \item[a.-]  $A(\mathbf{u} + \mathbf{v}) = A\mathbf{u} + A\mathbf{v}$
         \item[b.-] $A(c\mathbf{u}) = c(A\mathbf{u})$ 
     \end{itemize}
-
 \end{tcolorbox}
+
+\begin{tcolorbox}[colback=red!10!white, colframe=red!70!black, title=Resumen]
+    \begin{itemize}
+        \item[-] Si $A$ es una matriz de $m \times n$, con columnas $\mathbf{a_1},\mathbf{a_2},\dots, \mathbf{a_n}$ y si $x$ está en $\mathbb{R}^n$, entonces el producto de $A$ y $x$, denotado como $A\mathbf{x}$, es la combinación lineal de las columnas de $A$ utilizando como pesos las entradas correspondientes en $x$
+        \item[-] La ecuación $A\mathbf{x} = \mathbf{b}$ tiene solución si y solo si $\mathbf{b}$ es una combinación lineal de las columas de $A$.
+        \item[-] Las columnas de $A$ generan a $\mathbb{R}^m$ significa que cada $\mathbf{b}$ en $\mathbb{R}^m$ es una combinación lineal de las columnas de $A$.
+        \item[-] Un conjunto de vectores $\{\mathbf{v_1}, \mathbf{v_2},..., \mathbf{v_n}\}$ en $\mathbb{R}^m$ genera a $\mathbb{R}^m$ si cada vector en $\mathbb{R}^m$ es una combinación lineal de $\mathbf{v_1}, \mathbf{v_2},..., \mathbf{v_n}$; es decir, si Gen$\{\mathbf{v_1}, \mathbf{v_2},..., \mathbf{v_n}\} = \mathbb{R}^m$.
+        \item[-] Las columnas de $A$ o un conjunto de vectores $\{\mathbf{v_1}, \mathbf{v_2},..., \mathbf{v_n}\}$ en $\mathbb{R}^m$ genera a $\mathbb{R}^m$ si y solo si la matriz de coeficientes tiene una posición pivote en cada fila, esto porque así la ecuación $A\mathbf{x} = \mathbf{b}$ no puede ser inconsistente o bien no puede tener filas de la siguiente manera: $$\begin{bmatrix}
+            0 & 0 & \dotsb & 0 &  \mathbf{b} 
+        \end{bmatrix}$$
+    \end{itemize}
+\end{tcolorbox}
+
+\bibliography{Referencias}
 
 \end{document}
