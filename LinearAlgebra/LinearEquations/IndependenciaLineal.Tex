@@ -101,14 +101,14 @@ Se reduce por filas la matriz aumentada:
         \end{array}\right]
 \end{equation*}
 
-En este punto está claro que hay 3 variables básicas y ninguna variable básica. Así la ecuación $A\mathbf{x} = 0$ solo tiene la solución trivial y las columnas de $A$ son \textbf{linealmente independientes}.
+En este punto está claro que hay 3 variables básicas y ninguna variable libre. Así la ecuación $A\mathbf{x} = 0$ solo tiene la solución trivial y las columnas de $A$ son \textbf{linealmente independientes}.
 
 \begin{large}
     \textbf{Conjuntos de uno o dos vectores}
 \end{large}
 
 Un conjunto que solo tiene un vector $\mathbf{v}$ es linealmente independiente si y solo si $\mathbf{v}$ no es el vector cero. Esto se debe a que la ecuación vectorial $x_1\mathbf{v} = 0$ solo tiene la solución trivial cuando $\mathbf{v} \neq 0$. El vector cero es linealmente dependiente porque $x_{1}0=0$
-tiene muchas soluciones no triviales
+tiene muchas soluciones no triviales.
 
 \begin{large}
     \textbf{Ejemplo}
@@ -135,7 +135,7 @@ Podemos observar que $\mathbf{v_2}$ es múltiplo de $\mathbf{v_1}$, para ser exa
 Desde luego los vectores $\mathbf{v_1}$ y $\mathbf{v_2}$ no son múltiplos entre sí; por lo tanto \{$\mathbf{v_1}, \mathbf{v_2}$\} es un conjunto linealmente independiente.
 
 \begin{tcolorbox}[colback=red!10!white, colframe=red!70!black, title=Conjunto de 2 vectores]
-    Un conjunto de dos vectores \{$\mathbf{v_1}, \mathbf{v_2}$\} es linealmente dependiente si al menos uno de los vectores es un múltiplo del otro. El conjunto es linealmente independiente si y solo si ninguno de los vectores es un mñultiplo del otro.
+    Un conjunto de dos vectores \{$\mathbf{v_1}, \mathbf{v_2}$\} es linealmente dependiente si al menos uno de los vectores es un múltiplo del otro. El conjunto es linealmente independiente si y solo si ninguno de los vectores es un múltiplo del otro.
 \end{tcolorbox}
 
 En términos geométricos, dos vectores son linealmente dependientes si y solo si ambos están sobre la misma recta que pasa por el origen. 
@@ -166,11 +166,11 @@ En términos geométricos, dos vectores son linealmente dependientes si y solo s
 Al remunerar los vectores, se puede suponer que $\mathbf{v_1} = 0$. Así la ecuación $1\mathbf{v_1} + 0\mathbf{v_2} + \dotsb + 0\mathbf{v_p} = 0$ indica que el conjunto es linealmente dependiente, ya que se le pueden asignar infinitos pesos a $x_1$ que al multiplicarse por $\mathbf{v_1}$ (el vector cero), dará siempre cero y la suma de todos los vectores con la condición anterior será 0 para todas las entradas. \cite{DavidC}
 
 \begin{tcolorbox}[colback=red!10!white, colframe=red!70!black, title=Resumen]
-    La dependencia lineal de dos vectores en $\mathbb{R}^2$ se puede visualizar comodos vectores colindantes en una recta y la Independencia como dos vectores que no colindan en una recta. Para más vectores en $\mathbb{R}^3$ se pueden visualizar como que los vectores están en el mismo plano.
+    La dependencia lineal de dos vectores en $\mathbb{R}^2$ se puede visualizar como dos vectores colindantes en una recta y la Independencia como dos vectores que no colindan en una recta. Para más vectores en $\mathbb{R}^3$ se pueden visualizar como que los vectores están en el mismo plano.
     \begin{itemize}
-        \item[-] Un conjunto de vectores es linealmente independiente si la única solución a la ecuación $A \mathbf{x} = 0$ es la trivial.
+        \item[-] Un conjunto de vectores es linealmente independiente si la única solución a la ecuación $A\mathbf{x} = 0$ es la trivial, por lo tanto un conjunto de vectores es linealmente dependiente si la ecuación $A\mathbf{x} = 0$ tiene al menos una variable libre o bien si tiene una infinidad de soluciones a parte de la solución trivial.
         \item[-] Un conjunto de vectores es linealmente dependiente si un vector puede ser representado como la combinación lineal de los otros vectores.
-        \item[-]  Un conjunto \{$\mathbf{v_1},..., \mathbf{v_p}$\} es linealmente dependiente si existen pesos $c_1, ..., c_p$ donde al menos uno es diferente de cero, tales que $$c_1\mathbf{v_1} + c_2\mathbf{v_2} + ... + c_p\mathbf{v_p} = 0$$.
+        \item[-]  Un conjunto \{$\mathbf{v_1},..., \mathbf{v_p}$\} es linealmente dependiente si existen pesos $c_1, ..., c_p$ donde al menos uno es diferente de cero, tales que $$c_1\mathbf{v_1} + c_2\mathbf{v_2} + ... + c_p\mathbf{v_p} = 0$$
         \item[-] Dos vectores son linealmente dependiente si uno es múltiplo de otro. 
         \item[-] Si hay más vectores que entradas, significa que tenemos más variables que ecuaciones, por lo tanto, alguna variable es libre y el conjunto de vectores el linealmente dependiente. 
         \item[-] Si un conjunto tiene al vector 0, entonces el conjunto es linealmente dependiente, ya que el vector 0 es linealmente dependiente, esto debido a que podemos asignar todos los pesos como 0, excepto el del vector cero $$c_1\mathbf{v_1} + 0\mathbf{v_2} + \dotsb + 0\mathbf{v_p} = 0$$
