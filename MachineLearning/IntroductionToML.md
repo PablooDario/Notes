@@ -5,16 +5,12 @@ The **program** or the machine **can deduce information on its own and appy it i
 
 **Machine Learning** is a subtask of the Artificial Intelligence which is responsible of the induction of a model through a learning process.
 
-The **Inductive Learning** is an area of Automated Learning, which consists of techniques that **induce these models using a set of previously known instances, called training instances**; once induced, they can be applied to data unknown to the model.
-
-Supervised Learning (Predictive) |Unsupervised Learning (Descriptive)|Reinforcement Learning
----                              |---                                |---
-Regression                       |Association                        |Model Free
-Classification                   |Clustering                         |Model Based
-
+Machine learning can also be defined as the process of solving a practical problem by gathering a dataset, and algorithmically building a statistical model based on that dataset
 
 ## Supervised Learning 
-Supervised Learning input is **provided as a labelled dataset**, a model can learn from it to provide the result of the problem easily.
+In supervised learning, the dataset is the collection of labeled examples. Each element $x_i$ among $N$ is called a feature vector. A feature vector is a vector in which each dimension $j = 1, \dots , D$ contains a value that describes the example somehow. That value is called a **feature** and is denoted as $x^{(j)}$. For instance, if each example $x$ in our collection represents a person, then the first feature, $x^{(1)}$, could contain height in cm, the second feature, $x^{(2)}$, could contain weight in kg, $x^{(3)}$ could contain gender, and so on. For all examples in the dataset, the feature at position $j$ in the feature vector always contains the same kind of information. The label $y_i$ can be either an element belonging to a finite set of classes $\{1, 2, \dots , C\}$, or a real number, or a more complex structure. For instance, if your examples are email messages and your problem is spam detection, then you have two classes {*spam, not_spam*}.
+
+The goal of a **supervised learning algorithm** is to use the dataset to produce a model that takes a feature vector $x$ as input and outputs information that allows deducing the label for this feature vector. For instance, the model created using the dataset of people could take as input a feature vector describing a person and output a probability that the person has cancer.
 
 ### Classification problems
 This algorithm **helps to predict a discrete value.** It can be thought, the input data as a member of a particular class or group. For instance, taking up the photos of the fruit dataset, each photo has been labelled as a mango, an apple, etc. Here, the algorithm has to classify the new images into any of these categories.
